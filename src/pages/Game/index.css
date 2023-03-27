@@ -1,0 +1,28 @@
+.container {
+    width: 1404px;
+    height: 800px;
+    background-image: url('./images/Game.png');
+    position: relative;
+  }
+  
+  .rope {
+    background: url('./images/ropetile22.png') repeat;
+    height: 5px;
+    transform-origin: 0 50%;
+    position: absolute;
+    top: 160px;
+    left: 700px;
+  }
+  
+  .hook {
+    width: 50px;
+    height: 60px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: -28px;
+    right: -55px;
+  }
+  
+  .bottle {
+    position: absolute;
+  }
