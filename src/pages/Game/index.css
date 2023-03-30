@@ -3,6 +3,7 @@
     height: 800px;
     background-image: url('./images/Game.png');
     position: relative;
+    /* margin: 0 auto; */
   }
   
   .rope {

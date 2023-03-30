@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLatest } from "react-use";
+import Layout from "../../components/Layout";
 import "./index.css";
 
 var height = 580; //地面以下
@@ -75,9 +76,9 @@ const Game = () => {
         const bottle = bottles[i];
         if (
           left > bottle.left &&
-          left < bottle.left + data[i][0] &&
+          left < bottle.left + bottle.width &&
           top > bottle.top &&
-          top < bottle.top + data[i][1]
+          top < bottle.top + bottle.height
         ) {
           return i;
         }
@@ -156,37 +157,39 @@ const Game = () => {
   };
 
   return (
-    <div className="container">
-      <div
-        className="rope"
-        style={{
-          transform: `rotate(${degree}deg)`,
-          width: `${ropeLength}px`,
-        }}
-      >
-        <img
-          ref={hookRef}
-          src={require("./images/hookClose.png")}
-          className="hook"
-          alt="hook"
-        />
+    <Layout>
+      <div className="container">
+        <div
+          className="rope"
+          style={{
+            transform: `rotate(${degree}deg)`,
+            width: `${ropeLength}px`,
+          }}
+        >
+          <img
+            ref={hookRef}
+            src={require("./images/hookClose.png")}
+            className="hook"
+            alt="hook"
+          />
+        </div>
+        {bottles.map(({ left, top, width, height, isVisible }, index) => {
+          if (isVisible) {
+            return (
+              <img
+                key={index}
+                src={require(`./images/${index}.png`)}
+                className="bottle"
+                style={{ top: `${top}px`, left: `${left}px` }}
+                alt="bottle"
+              />
+            );
+          } else {
+            return <></>;
+          }
+        })}
       </div>
-      {bottles.map(({ left, top, width, height, isVisible }, index) => {
-        if (isVisible) {
-          return (
-            <img
-              key={index}
-              src={require(`./images/${index}.png`)}
-              className="bottle"
-              style={{ top: `${top}px`, left: `${left}px` }}
-              alt="bottle"
-            />
-          );
-        } else {
-          return <></>;
-        }
-      })}
-    </div>
+    </Layout>
   );
 };
 
