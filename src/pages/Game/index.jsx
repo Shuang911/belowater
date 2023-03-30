@@ -75,9 +75,9 @@ const Game = () => {
         const bottle = bottles[i];
         if (
           left > bottle.left &&
-          left < bottle.left + bottle.width &&
+          left < bottle.left + data[i][0] &&
           top > bottle.top &&
-          top < bottle.top + bottle.height
+          top < bottle.top + data[i][1]
         ) {
           return i;
         }
