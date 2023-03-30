@@ -13,6 +13,7 @@ const Game = () => {
   const [ropeLength, setRopeLength] = useState(60);
   const [bottles, setBottles] = useState([]);
   const timer = useRef();
+  const hookRef = useRef();
 
   const data = [
     [216, 99],
@@ -40,7 +41,7 @@ const Game = () => {
   const swing = () => {
     setDegree((prevDegree) => {
       let newDegree = prevDegree + directionLatest.current;
-      if (prevDegree >= 170 || prevDegree <= 10) {
+      if (newDegree >= 170 || newDegree <= 10) {
         directionLatest.current *= -1;
       }
       return newDegree;
@@ -93,10 +94,12 @@ const Game = () => {
           return newRopeLength;
         }
 
+        const hookRect = hookRef.current.getBoundingClientRect();
         const hookPosition = {
-          left: 700 + newRopeLength * Math.sin(arc),
-          top: 160 + newRopeLength * Math.cos(arc),
+          left: hookRect.left + 35 * Math.sin((degree * Math.PI) / 180),
+          top: hookRect.top + 5,
         };
+
         const bottleIndex = checkBottleCollision(hookPosition);
 
         if (bottleIndex >= 0) {
@@ -128,16 +131,20 @@ const Game = () => {
 
         if (bottleIndex >= 0) {
           setBottles((prevBottles) =>
-            prevBottles.map((bottle, index) =>
-              index === bottleIndex
-                ? {
-                    ...bottle,
-                    left:
-                      700 + newRopeLength * Math.sin(arc) - bottle.width / 2,
-                    top: 160 + newRopeLength * Math.cos(arc),
-                  }
-                : bottle
-            )
+            prevBottles.map((bottle, index) => {
+              if (index === bottleIndex) {
+                const hookRect = hookRef.current.getBoundingClientRect();
+                return {
+                  ...bottle,
+                  left:
+                    hookRect.left +
+                    (35 - bottle.width / 2) *
+                      Math.sin((degree * Math.PI) / 180),
+                  top: hookRect.top + 5,
+                };
+              }
+              return bottle;
+            })
           );
         }
 
@@ -158,6 +165,7 @@ const Game = () => {
         }}
       >
         <img
+          ref={hookRef}
           src={require("./images/hookClose.png")}
           className="hook"
           alt="hook"
