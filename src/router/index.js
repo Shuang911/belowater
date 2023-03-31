@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Game from "../pages/Game";
 import About from "../pages/About";
+import Quiz from "../pages/Quiz"
+
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
     path: "/about",
     Component: About,
   },
+  {
+    path:"/quiz",
+    Component: Quiz,
+  }
 ]);
 
 export default router;
