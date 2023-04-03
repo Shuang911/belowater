@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from "./index.css";
+import style from "./index.module.css";
 import Layout from "../../components/Layout";
 import Tuna from './images/tuna.jpg'
 import img1 from './images/1.png'
@@ -78,20 +78,20 @@ export default function Quiz() {
 	
 	return (
 		 <Layout>
-		<div className='app'>
+		<div className={style.app}>
 			{showScore ? (
-				<div className='score-section'>You scored {score} out of {questions.length}</div>
+				<div className={style.score.section}>You scored {score} out of {questions.length}</div>
 			) : (
 				<>
-					<div className='question-section'>
-						<div className='question-count'>
+					<div className={style.question.section}>
+						<div className={style.question.count}>
 							<span>Quiz{currentQuestion+1}</span>/{questions.length}
 						</div>
 						<img src={questions[currentQuestion].hintImg.image} alt="" />						
 						
-						<div className='question-text'>{questions[currentQuestion].questionText}</div>
+						<div className={style.question.text}>{questions[currentQuestion].questionText}</div>
 					</div>
-					<div className='answer-section'>
+					<div className={style.answer.section}>
 						{questions[currentQuestion].answerOptions.map((answerOptions) => (
 							<button key={answerOptions.image} onClick={() => handleAnswerButtonClick1(answerOptions.isCorrect)}>
 								<img src={answerOptions.image} alt={`Option ${answerOptions.image}`} />

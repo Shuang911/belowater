@@ -1,8 +1,8 @@
 import Layout from "../../components/Layout";
-import "./index.css";
+import style from "./index.module.css";
 
 const About = () => {
-  return <Layout>About</Layout>;
+  return <Layout></Layout>;
 };
 
 export default About;

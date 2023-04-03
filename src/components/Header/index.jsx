@@ -1,4 +1,4 @@
-import "./index.css";
+import style from "./index.module.css";
 import { Link, useLocation } from "react-router-dom";
 import classnames from 'classnames'
 
@@ -13,12 +13,12 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <div className="header">
-      <div className="logo">
+    <div className={style.header}>
+      <div className= {style.logo}>
         <img src={require("./images/Logo.png")} alt="" />
         Oceanledge
       </div>
-      <div className="menu">
+      <div className={style.menu}>
         {menuData.map((menu) => {
           return (
             <Link to={menu.to} className={classnames({active: location.pathname === menu.to})}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLatest } from "react-use";
 import Layout from "../../components/Layout";
-import "./index.css";
+import style from "./index.module.css";
 
 var height = 580; //地面以下
 var width = 610; //左右范围
@@ -158,9 +158,9 @@ const Game = () => {
 
   return (
     <Layout>
-      <div className="container">
+      <div className={style.container}>
         <div
-          className="rope"
+          className={style.rope}
           style={{
             transform: `rotate(${degree}deg)`,
             width: `${ropeLength}px`,
@@ -169,7 +169,7 @@ const Game = () => {
           <img
             ref={hookRef}
             src={require("./images/hookClose.png")}
-            className="hook"
+            className={style.hook}
             alt="hook"
           />
         </div>
@@ -179,7 +179,7 @@ const Game = () => {
               <img
                 key={index}
                 src={require(`./images/${index}.png`)}
-                className="bottle"
+                className={style.bottle}
                 style={{ top: `${top}px`, left: `${left}px` }}
                 alt="bottle"
               />

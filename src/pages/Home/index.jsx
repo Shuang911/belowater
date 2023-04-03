@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import Ad from "./components/Ad";
-import "./index.css";
+//import style from "./index.module.css";
 import utilsStyle from "../../styles/utils.module.css";
 
 const Home = () => {
