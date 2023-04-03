@@ -1,17 +1,17 @@
-import "./index.css";
+import style from './index.module.css'
 
 const Ad = () => {
   return (
-    <div className="ad">
-      <div className="title">
+    <div className={style.ad}>
+      <div className={style.title}>
         Welcome to
         <br /> Oceanledge
       </div>
-      <div className="desc">
+      <div className={style.desc}>
         Children's Science Website for Marine
         <br /> Knowledge in Australia。
       </div>
-      <div className="learn">Learn about</div>
+      <div className={style.learn}>Learn about</div>
     </div>
   );
 };

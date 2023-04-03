@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import "./index.css";
+import style from "./index.css";
+import Layout from "../../components/Layout";
 import Tuna from './images/tuna.jpg'
 import img1 from './images/1.png'
 import img2 from './images/2.png'
@@ -76,6 +77,7 @@ export default function Quiz() {
 	}
 	
 	return (
+		 <Layout>
 		<div className='app'>
 			{showScore ? (
 				<div className='score-section'>You scored {score} out of {questions.length}</div>
@@ -99,6 +101,7 @@ export default function Quiz() {
 				</>
 			)}
 		</div>
+		</Layout>
 		
 	);
 	

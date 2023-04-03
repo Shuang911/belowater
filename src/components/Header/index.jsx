@@ -1,9 +1,11 @@
 import "./index.css";
 import { Link, useLocation } from "react-router-dom";
+import classnames from 'classnames'
 
 const menuData = [
   { to: "/", name: "Home" },
-  { to: "/game", name: "Game" },
+  { to: "/game", name: "Ocean Helper" },
+    { to: "/quiz", name: "Ocean Friends" },
   { to: "/about", name: "About" },
 ];
 
@@ -19,7 +21,7 @@ const Header = () => {
       <div className="menu">
         {menuData.map((menu) => {
           return (
-            <Link to={menu.to} className={{ active: location.pathname }}>
+            <Link to={menu.to} className={classnames({active: location.pathname === menu.to})}>
               {menu.name}
             </Link>
           );

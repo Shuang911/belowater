@@ -1,0 +1,142 @@
+.footer {
+}
+
+.content {
+  max-width: var(--width-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(127.78deg, #8d2eff 21.1%, #6829b3 81.57%);
+  border: 10px solid #6829b3;
+  border-width: 5px;
+  border-radius: 80px;
+  padding: 139px 59px 139px 138px;
+}
+
+.team {
+  width: 43.33%;
+  padding-right: 50px;
+  box-sizing: border-box;
+}
+
+.team .logo {
+  width: 155px;
+  height: 110px;
+}
+
+.team .intro {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  color: #fff;
+}
+
+.team .contact {
+  min-width: 380px;
+  margin-top: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid #f7f6fe;
+  border-radius: 50px;
+  padding: 5px 5px 5px 30px;
+}
+.team .contact div {
+  flex: 1;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  color: #d1d1d1;
+}
+
+.team .contact button {
+  background: #ffb347;
+  border-radius: 27.5px;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  color: #fff;
+  padding: 7px 20px;
+}
+
+.navigation {
+  width: 23.33%;
+  padding-right: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.navigation div {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.navigation a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+.list {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list .item {
+  width: calc(33.33% - 10px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.list .item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.list .item .title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+}
+
+.item img {
+}
+
+.item .itemContent {
+}
+
+.item .title {
+}
+
+.item .desc {
+}
