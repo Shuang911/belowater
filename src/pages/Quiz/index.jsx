@@ -17,7 +17,7 @@ import img10 from './images/10.png'
 export default function Quiz() {
 	const questions = [
 		{
-			questionText: "I swim fast: up to 70 kilometers (43 miles) per hour. And I migrate vast distances to feed and to lay eggs. I can grow as big as 3 meters (10 feet), but when I was a larva I was the size of a lentil.Can you find my plankton baby picture?",
+			questionText: "I swim fast: up to 70 kilometers (43 miles) per hour. And I migrate vast distances to feed and to lay eggs. I can grow as big as 3 meters (10 feet), but when I was a larva I was the size of a lentil. Can you find my plankton baby picture?",
 			hintImg:{image:Tuna},
 			answerOptions: [
 				
@@ -80,18 +80,18 @@ export default function Quiz() {
 		 <Layout>
 		<div className={style.app}>
 			{showScore ? (
-				<div className={style.score.section}>You scored {score} out of {questions.length}</div>
+				<div className={style.scoresection}>You scored {score} out of {questions.length}</div>
 			) : (
 				<>
-					<div className={style.question.section}>
-						<div className={style.question.count}>
+					<div className={style.questionsection}>
+						<div className={style.questioncount}>
 							<span>Quiz{currentQuestion+1}</span>/{questions.length}
 						</div>
 						<img src={questions[currentQuestion].hintImg.image} alt="" />						
 						
-						<div className={style.question.text}>{questions[currentQuestion].questionText}</div>
+						<div className={style.questiontext}>{questions[currentQuestion].questionText}</div>
 					</div>
-					<div className={style.answer.section}>
+					<div className={style.answersection}>
 						{questions[currentQuestion].answerOptions.map((answerOptions) => (
 							<button key={answerOptions.image} onClick={() => handleAnswerButtonClick1(answerOptions.isCorrect)}>
 								<img src={answerOptions.image} alt={`Option ${answerOptions.image}`} />
