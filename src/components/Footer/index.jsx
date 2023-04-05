@@ -24,10 +24,10 @@ const Footer = () => {
         <div className={style.navigation}>
           <div>Navigation</div>
           <Link to="/about">About</Link>
-          <Link to="/faqs">FAQs</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/suppport">Parents Support</Link>
-          <Link to="/contacts">contacts</Link>
+          <Link to="/">FAQs</Link>
+          <Link to="/">Blog</Link>
+          <Link to="/">Parents Support</Link>
+          <Link to="/">contacts</Link>
         </div>
         {/* <div className={style.list}>
           {Array(3)

@@ -12,7 +12,7 @@ export default function CatchResultDialog(props) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Good Job!</DialogTitle>
+      {/* <DialogTitle>Good Job!</DialogTitle> */}
       <DialogContent>{desc}</DialogContent>
     </Dialog>
   );
