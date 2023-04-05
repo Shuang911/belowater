@@ -27,7 +27,7 @@ export default function Quiz() {
 			],
 		},
 		{
-			questionText: 'I lie on my side on the seafloor waiting to ambush prey. Because my left side always faces up, both my eyes are on the left. But when I was a baby, I had eyes on both sides, like other fishes.Can you find my plankton baby picture?',
+			questionText: 'I lie on my side on the seafloor waiting to ambush prey. Because my left side always faces up, both my eyes are on the left. But when I was a baby, I had eyes on both sides, like other fishes. Can you find my plankton baby picture?',
 			hintImg:{image:flounder},
 			answerOptions: [
 				{ id : 0, image: img5, isCorrect: true },

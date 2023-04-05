@@ -3,7 +3,8 @@
 }
 
 .content {
-  max-width: 1080px;
+  /* max-width: 1080px; */
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -11,7 +12,8 @@
   background: linear-gradient(127.78deg, #8d2eff 21.1%, #6829b3 81.57%);
   border: 10px solid #6829b3;
   border-width: 5px;
-  border-radius: 60px;
+  /* border-radius: 60px; */
+  border-radius: 15px; 
   padding: 59px 59px 59px 138px;
 }
 

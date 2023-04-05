@@ -18,10 +18,16 @@
   margin-left: 3px;
 }
 
+.menu a:hover {
+  text-decoration: underline;
+}
+
 .menu {
   font-weight: 600;
   font-size: 18px;
 }
+
+
 .menu a + a {
   margin-left: 42px;
 }

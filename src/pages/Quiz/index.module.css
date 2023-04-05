@@ -1,6 +1,7 @@
 .app {
   background-color: #223061;
-  width: 1050px;
+  /* width: 1050px; */
+  width:1448px;
   height: auto;
   border-radius: 15px;
   padding: 50px;
@@ -42,9 +43,9 @@
   width: 100%;
   color: #ffffff;
   background-color: #bfc6e2;
-  padding: 40px;
+  padding: 70px;
   align-items: center;
-  border: 15px solid #012345;
+  border: 30px solid #012345;
 }
 
 .answersection button:hover {
