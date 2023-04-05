@@ -17,7 +17,7 @@ import img10 from './images/10.png'
 export default function Quiz() {
 	const questions = [
 		{
-			questionText: "I swim fast: up to 70 kilometers (43 miles) per hour. And I migrate vast distances to feed and to lay eggs. I can grow as big as 3 meters (10 feet), but when I was a larva I was the size of a lentil. Can you find my plankton baby picture?",
+			questionText: "I swim fast: up to 70 kilometers (43 miles) per hour. And I migrate vast distances to feed and to lay eggs. I can grow as big as 3 meters (10 feet), but when I was a larva I was the size of a lentil.  Can you find my plankton baby picture?",
 			hintImg:{image:Tuna},
 			answerOptions: [
 				
@@ -50,26 +50,29 @@ export default function Quiz() {
 	const [currentQuestion,setCurrentQuestion] =useState(0);
 	const [showScore,setShowScore] = useState(false);
 	const [score,setScore] = useState(0);
+	const [answerStatus, setAnswerStatus] = useState(null);
 
 	const handleAnswerButtonClick1 = (isCorrect) =>{
 		if (isCorrect) {
-			alert('Correct answer!');
+			// alert('Correct answer!');
+			setAnswerStatus(true);
 			setScore(score+1);
 			const nextQuestion = currentQuestion +1;
 			if(nextQuestion < questions.length){
 				setCurrentQuestion(nextQuestion);
 			}else{
-				alert("Congratulation! you finished all the question ");
+				// alert("Congratulation! you finished all the question ");
 				setShowScore(true);
 			}
 				
 		  }else {
-			alert('Incorrect answer!');
+			// alert('Incorrect answer!');
+			setAnswerStatus(false);
 			const nextQuestion = currentQuestion +1;
 			if(nextQuestion < questions.length){
 				setCurrentQuestion(nextQuestion);
 			}else{
-				alert("you finished all the question!");
+				// alert("you finished all the question!");
 				setShowScore(true);
 			}
 		  }
@@ -87,7 +90,7 @@ export default function Quiz() {
 						<div className={style.questioncount}>
 							<span>Quiz{currentQuestion+1}</span>/{questions.length}
 						</div>
-						<img src={questions[currentQuestion].hintImg.image} alt="" />						
+						<img src={questions[currentQuestion].hintImg.image} alt="" className={style.questionImg}/>						
 						
 						<div className={style.questiontext}>{questions[currentQuestion].questionText}</div>
 					</div>
@@ -97,7 +100,22 @@ export default function Quiz() {
 								<img src={answerOptions.image} alt={`Option ${answerOptions.image}`} />
 							</button>
 						))}
-					</div>
+						
+					</div> 
+					
+					{answerStatus !== null && (
+						<div className={style.answerstatus}>
+						{answerStatus ? (
+							<div className={style.correct}>
+							<span>your choose for last quiz is Correct!</span>
+							</div>
+						) : (
+							<div className={style.incorrect}>
+							<span>your choose for last quiz is Incorrect!</span>
+							</div>
+						)}
+		</div>
+					)}
 				</>
 			)}
 		</div>

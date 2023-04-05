@@ -22,6 +22,11 @@
 
 }
 
+.questionImg{
+  display: block;
+  margin: 0 auto;
+}
+
 .questioncount {
   margin-bottom: 50px;
 }
@@ -37,6 +42,14 @@
 .answersection {
   width: 100%;
   display: flex;
+}
+
+.answerstatus{
+  /* width: 100%;
+  display: flex; */
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .answersection button {
@@ -73,3 +86,4 @@
 .incorrect {
   background-color: #ff3333;
 }
+

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLatest } from "react-use";
 import Layout from "../../components/Layout";
 import { getMarineAnimals } from "../../services/api";
+import { getPlastics} from "../../services/api";
 import style from "./index.module.css";
 import CatchResultDialog from "./dialogs/CatchResult";
 
@@ -12,7 +13,12 @@ var animalSize = {
   width: 200,
   height: 200,
 };
-var animalMaxNum = 10;
+var plasticSize = {
+  width: 150,
+  height: 150,
+};
+var animalMaxNum = 5;
+var plasticMaxNum = 2;
 
 const randomNum = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -50,6 +56,7 @@ const createElementData = ({ type, size, image, data }) => {
   };
 };
 
+
 const getRandomAnimalsData = (data, num) => {
   const result = {};
   num = Math.min(num, data.length);
@@ -69,7 +76,6 @@ const getRandomAnimalsData = (data, num) => {
       continue;
 
     result[animal.id] = item;
-
     num--;
   }
   return Object.entries(result).map(([_, value]) => value);

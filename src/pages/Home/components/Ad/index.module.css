@@ -1,19 +1,21 @@
 .ad {
-  width: 1080px;
+  /* width: 1080px; */
   height: 617px;
   padding: 88px 0 0 79px;
   background: url("./images/bgAd.png") no-repeat center / cover;
+  /* background-position: center; */
+  /* background-size: px; */
   margin: 0 auto;
 }
 
 .ad .title {
   font-family: var(--font-catamaran);
-  font-size: 70px;
+  font-size: 80px;
   line-height: 110px;
   color: #00005c;
 }
 .ad .desc {
-  font-size: 30px;
+  font-size: 32px;
   line-height: 171.5%;
   color: #ffffff;
   margin-top: 15px;
