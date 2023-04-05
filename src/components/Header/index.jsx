@@ -4,8 +4,8 @@ import classnames from 'classnames'
 
 const menuData = [
   { to: "/", name: "Home" },
-  { to: "/game", name: "Ocean Helper" },
-    { to: "/quiz", name: "Ocean Friends" },
+  { to: "/game", name: "Ocean Helper Game" },
+    { to: "/quiz", name: "Ocean Friends Quiz" },
   { to: "/about", name: "About" },
 ];
 
@@ -19,9 +19,9 @@ const Header = () => {
         Oceanledge
       </div>
       <div className={style.menu}>
-        {menuData.map((menu) => {
+        {menuData.map((menu, index) => {
           return (
-            <Link to={menu.to} className={classnames({active: location.pathname === menu.to})}>
+            <Link key={index} to={menu.to} className={classnames({active: location.pathname === menu.to})}>
               {menu.name}
             </Link>
           );

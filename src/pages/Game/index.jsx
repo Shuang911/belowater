@@ -1,47 +1,123 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLatest } from "react-use";
 import Layout from "../../components/Layout";
+import { getMarineAnimals } from "../../services/api";
 import style from "./index.module.css";
+import CatchResultDialog from "./dialogs/CatchResult";
 
 var height = 580; //地面以下
 var width = 610; //左右范围
+var horizontalPlaneTop = 220;
+var animalSize = {
+  width: 200,
+  height: 200,
+};
+var animalMaxNum = 10;
+
+const randomNum = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+const isCollision = (a, b) => {
+  return (
+    a.left < b.left + b.width &&
+    a.left + a.width > b.left &&
+    a.top < b.top + b.height &&
+    a.top + a.height > b.top
+  );
+};
+
+// 生成UUID
+function uuidv4() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16)
+  );
+}
+
+const createElementData = ({ type, size, image, data }) => {
+  return {
+    type,
+    id: uuidv4(),
+    ...size,
+    left: randomNum(0, 2 * 610 - 100),
+    top: randomNum(horizontalPlaneTop, 600 - 100),
+    image,
+    isVisible: true,
+    data,
+  };
+};
+
+const getRandomAnimalsData = (data, num) => {
+  const result = {};
+  num = Math.min(num, data.length);
+  while (num) {
+    const randomIndex = randomNum(0, data.length - 1);
+    const animal = data[randomIndex];
+
+    if (animal.id in result) continue;
+    const item = createElementData({
+      type: "animal",
+      size: animalSize,
+      image: animal.animal_img,
+      data: animal,
+    });
+
+    if (Object.values(result).some((value) => isCollision(value, item)))
+      continue;
+
+    result[animal.id] = item;
+
+    num--;
+  }
+  return Object.entries(result).map(([_, value]) => value);
+};
 
 const Game = () => {
   const [degree, setDegree] = useState(11);
   const degreeLatest = useLatest(degree);
   const directionLatest = useRef(1);
   const [ropeLength, setRopeLength] = useState(60);
-  const [bottles, setBottles] = useState([]);
+  const [elements, setElements] = useState([]);
   const timer = useRef();
   const hookRef = useRef();
-  const [hooked, setHooked] = useState(false);
+  const containerRef = useRef();
+  const [openResultProps, setOpenResultProps] = React.useState({
+    open: false,
+    desc: "",
+  });
 
-  const data = [
-    [216, 99],
-    [117, 156],
-    [90, 170],
-  ];
+  const fetchElement = async () => {
+    const res = await getMarineAnimals();
+    const animalsData = getRandomAnimalsData(res.data, animalMaxNum);
+    setElements(animalsData);
+  };
 
   useEffect(() => {
-    createBottles();
+    fetchElement();
+  }, []);
+
+  useEffect(() => {
+    // createBottles();
     timer.current = setInterval(() => swing(), 20);
     return () => clearInterval(timer.current);
   }, []);
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.keyCode === 32) {
-        catchBottle();
-      }
-    };
+  // useEffect(() => {
+  //   const handleKeyDown = (e) => {
+  //     if (e.keyCode === 32) {
+  //       catchBottle();
+  //     }
+  //   };
 
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [degree, ropeLength, bottles]);
+  //   document.addEventListener("keydown", handleKeyDown);
+  //   return () => document.removeEventListener("keydown", handleKeyDown);
+  // }, [degree, ropeLength, bottles]);
 
   const handleHook = () => {
-    setHooked(true);
-    catchBottle();
+    catchElement();
   };
 
   const swing = () => {
@@ -54,36 +130,32 @@ const Game = () => {
     });
   };
 
-  const randomNum = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+  const getHookPosition = () => {
+    const conatinerRect = containerRef.current.getBoundingClientRect();
+    const hookRect = hookRef.current.getBoundingClientRect();
+    return {
+      top: hookRect.top - conatinerRect.top,
+      left: hookRect.left - conatinerRect.left,
+    };
   };
 
-  const createBottles = () => {
-    const newBottles = data.map(([width, height]) => {
-      const left = randomNum(40, 2 * 610 - width);
-      const top = randomNum(200, 600 - height);
-      return { left, top, width, height, isVisible: true };
-    });
-    setBottles(newBottles);
-  };
-
-  const catchBottle = () => {
+  const catchElement = () => {
     clearInterval(timer.current);
     const arc = (degreeLatest.current * Math.PI) / 180;
     const r = height / Math.sin(arc);
     const len = Math.abs(width / Math.cos(arc));
     const maxLength = r > len ? len : r;
 
-    const checkBottleCollision = (hookPosition) => {
+    const checkCollision = (hookPosition) => {
       const { left, top } = hookPosition;
 
-      for (let i = 0; i < bottles.length; i++) {
-        const bottle = bottles[i];
+      for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
         if (
-          left > bottle.left &&
-          left < bottle.left + bottle.width &&
-          top > bottle.top &&
-          top < bottle.top + bottle.height
+          left > element.left &&
+          left < element.left + element.width &&
+          top > element.top &&
+          top < element.top + element.height
         ) {
           return i;
         }
@@ -100,34 +172,36 @@ const Game = () => {
           return newRopeLength;
         }
 
-        const hookRect = hookRef.current.getBoundingClientRect();
+        const hookPositionOrigin = getHookPosition();
         const hookPosition = {
-          left: hookRect.left + 35 * Math.sin((degree * Math.PI) / 180),
-          top: hookRect.top + 5,
+          left:
+            hookPositionOrigin.left + 35 * Math.sin((degree * Math.PI) / 180),
+          top: hookPositionOrigin.top + 5,
         };
 
-        const bottleIndex = checkBottleCollision(hookPosition);
+        const elementIndex = checkCollision(hookPosition);
 
-        if (bottleIndex >= 0) {
+        if (elementIndex >= 0) {
           clearInterval(timer.current);
-          timer.current = setInterval(() => shorten(bottleIndex), 20);
+          timer.current = setInterval(() => shorten(elementIndex), 20);
         }
 
         return newRopeLength;
       });
     };
 
-    const shorten = (bottleIndex) => {
+    const shorten = (catchIndex) => {
       setRopeLength((prevRopeLength) => {
         const newRopeLength = prevRopeLength - 5;
         if (newRopeLength <= 60) {
+          catchIndex >= 0 && handleCatched(catchIndex);
           clearInterval(timer.current);
-          if (bottleIndex >= 0) {
-            setBottles((prevBottles) =>
-              prevBottles.map((bottle, index) =>
-                index === bottleIndex
-                  ? { ...bottle, left: 9999, top: 9999, isVisible: false }
-                  : bottle
+          if (catchIndex >= 0) {
+            setElements((prev) =>
+              prev.map((item, index) =>
+                index === catchIndex
+                  ? { ...item, left: 9999, top: 9999, isVisible: false }
+                  : item
               )
             );
           }
@@ -135,21 +209,20 @@ const Game = () => {
           return newRopeLength;
         }
 
-        if (bottleIndex >= 0) {
-          setBottles((prevBottles) =>
-            prevBottles.map((bottle, index) => {
-              if (index === bottleIndex) {
-                const hookRect = hookRef.current.getBoundingClientRect();
+        if (catchIndex >= 0) {
+          setElements((prev) =>
+            prev.map((item, index) => {
+              if (index === catchIndex) {
+                const hookPositionOrigin = getHookPosition();
                 return {
-                  ...bottle,
+                  ...item,
                   left:
-                    hookRect.left +
-                    (35 - bottle.width / 2) *
-                      Math.sin((degree * Math.PI) / 180),
-                  top: hookRect.top + 5,
+                    hookPositionOrigin.left +
+                    (35 - item.width / 2) * Math.sin((degree * Math.PI) / 180),
+                  top: hookPositionOrigin.top + 5,
                 };
               }
-              return bottle;
+              return item;
             })
           );
         }
@@ -161,23 +234,31 @@ const Game = () => {
     timer.current = setInterval(lengthen, 20);
   };
 
-  return (
-    
-    <Layout>
-      <div>
-        <button className={style.hookbutton} onClick={handleHook}>Hook</button>
-        {hooked }
-      </div>
+  const handleCatched = (elementIndex) => {
+    const descFieldMaps = {
+      animal: "animal_comment",
+    };
+    const element = elements[elementIndex];
+    console.log(element.data[descFieldMaps[element.type]]);
+    setOpenResultProps({
+      open: true,
+      desc: element.data[descFieldMaps[element.type]],
+    });
+  };
 
-      <div className={style.container}>
+  return (
+    <Layout>
+      <div className={style.container} ref={containerRef}>
+        <button className={style.hookbutton} onClick={handleHook}>
+          Hook
+        </button>
         <div
           className={style.rope}
           style={{
             transform: `rotate(${degree}deg)`,
             width: `${ropeLength}px`,
           }}
-        > 
-
+        >
           <img
             ref={hookRef}
             src={require("./images/hookClose.png")}
@@ -185,23 +266,35 @@ const Game = () => {
             alt="hook"
           />
         </div>
-        {bottles.map(({ left, top, width, height, isVisible }, index) => {
-          if (isVisible) {
-            return (
-              <img
-                key={index}
-                src={require(`./images/${index}.png`)}
-                className={style.bottle}
-                style={{ top: `${top}px`, left: `${left}px` }}
-                alt="bottle"
-              />
-            );
-          } else {
-            return <></>;
-          }
-        })}
-        
+        <div className={style.bottleLayer}>
+          {elements.map(
+            ({ image, left, top, width, height, isVisible }, index) => {
+              if (isVisible) {
+                return (
+                  <img
+                    key={index}
+                    src={image}
+                    className={style.bottle}
+                    style={{
+                      top: `${top}px`,
+                      left: `${left}px`,
+                      width,
+                      height,
+                    }}
+                    alt="bottle"
+                  />
+                );
+              } else {
+                return <div key={index}></div>;
+              }
+            }
+          )}
+        </div>
       </div>
+      <CatchResultDialog
+        {...openResultProps}
+        onClose={() => setOpenResultProps((prev) => ({ ...prev, open: false }))}
+      />
     </Layout>
   );
 };

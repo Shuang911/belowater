@@ -32,9 +32,9 @@ const Footer = () => {
         <div className={style.list}>
           {Array(3)
             .fill(null)
-            .map((i) => {
+            .map((_, index) => {
               return (
-                <Link to="/" className={style.item} key={i}>
+                <Link to="/" className={style.item} key={index}>
                   <img src="http://placeimg.com/640/480/city" alt="" />
                   <div className={style.itemContent}>
                     <div className={style.title}>title</div>
