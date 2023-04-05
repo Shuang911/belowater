@@ -75,6 +75,32 @@ const getRandomAnimalsData = (data, num) => {
   return Object.entries(result).map(([_, value]) => value);
 };
 
+const getRandomPlasticsData = (data, num) => {
+  const result = {};
+  num = Math.min(num, data.length);
+  while (num) {
+    const randomIndex = randomNum(0, data.length - 1);
+    const plastic = data[randomIndex];
+
+    if (plastic.id in result) continue;
+    const item = createElementData({
+      type: "plastic",
+      size: plasticSize,
+      image: plastic.plastics_image,
+      data: plastic,
+    });
+
+    if (Object.values(result).some((value) => isCollision(value, item)))
+      continue;
+
+    result[plastic.id] = item;
+    num--;
+  }
+  return Object.entries(result).map(([_, value]) => value);
+};
+
+
+
 const Game = () => {
   const [degree, setDegree] = useState(11);
   const degreeLatest = useLatest(degree);
@@ -92,8 +118,11 @@ const Game = () => {
   const fetchElement = async () => {
     const res = await getMarineAnimals();
     const animalsData = getRandomAnimalsData(res.data, animalMaxNum);
-    setElements(animalsData);
-  };
+    const r = await getPlastics();
+    const plasticData = getRandomPlasticsData(r.data, plasticMaxNum);
+    setElements([...animalsData, ...plasticData]);
+
+};
 
   useEffect(() => {
     fetchElement();
@@ -105,17 +134,7 @@ const Game = () => {
     return () => clearInterval(timer.current);
   }, []);
 
-  // useEffect(() => {
-  //   const handleKeyDown = (e) => {
-  //     if (e.keyCode === 32) {
-  //       catchBottle();
-  //     }
-  //   };
-
-  //   document.addEventListener("keydown", handleKeyDown);
-  //   return () => document.removeEventListener("keydown", handleKeyDown);
-  // }, [degree, ropeLength, bottles]);
-
+ 
   const handleHook = () => {
     catchElement();
   };
@@ -237,6 +256,7 @@ const Game = () => {
   const handleCatched = (elementIndex) => {
     const descFieldMaps = {
       animal: "animal_comment",
+      plastic: "plastics_fact"
     };
     const element = elements[elementIndex];
     console.log(element.data[descFieldMaps[element.type]]);

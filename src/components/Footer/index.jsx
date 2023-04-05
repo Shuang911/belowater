@@ -29,7 +29,7 @@ const Footer = () => {
           <Link to="/suppport">Parents Support</Link>
           <Link to="/contacts">contacts</Link>
         </div>
-        <div className={style.list}>
+        {/* <div className={style.list}>
           {Array(3)
             .fill(null)
             .map((_, index) => {
@@ -43,7 +43,7 @@ const Footer = () => {
                 </Link>
               );
             })}
-        </div>
+        </div> */}
       </div>
       <div className={style.copyrights}>
         Oceanledge © Kiyomi Team All rights reserved Copyrights 2023

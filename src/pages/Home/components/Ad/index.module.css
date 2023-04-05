@@ -8,12 +8,12 @@
 
 .ad .title {
   font-family: var(--font-catamaran);
-  font-size: 80px;
+  font-size: 70px;
   line-height: 110px;
   color: #00005c;
 }
 .ad .desc {
-  font-size: 32px;
+  font-size: 30px;
   line-height: 171.5%;
   color: #ffffff;
   margin-top: 15px;
