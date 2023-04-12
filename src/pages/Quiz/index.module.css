@@ -13,14 +13,14 @@
   width: 1440px;
   height: 1000px;
   /* background-color: #2b3e80; */
-  color: #b0b1ed;
+  color: #b2f826;
   font-size: 3rem;
   font-weight: bold;
   display: block;
   margin: 2rem auto;
   background: url("./images/0.png") no-repeat center / cover; 
   border-radius: 15px;
-  padding: 50px;
+  padding: 230px;
 }
 
 .startBtn{
@@ -97,6 +97,13 @@
   margin: 2rem auto;
 }
 
+.answerImg{
+  display: block;
+  margin: 0 auto;
+  padding: 30px;
+  width:500px;
+}
+
 .answersection {
   width: 100%;
   display: flex;
@@ -137,6 +144,7 @@
   margin-right: 5px;
 }
 
+
 .correct  {
   background-color: #2f922f;
   color: white;
@@ -144,7 +152,7 @@
 }
 
 .incorrect  {
-  background-color: #ff3333;
+  background-color: #f30707;
   color: white;
   margin: 2rem auto;
 }

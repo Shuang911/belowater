@@ -13,8 +13,8 @@ import dogWhelk from './images/dogWhelk.jpg'
 import img8 from './images/8.png'
 import img9 from './images/9.png'
 import img10 from './images/10.png'
-// import correctAud from './sounds/fuzhu.mp3'
-// import incorrectAud from './sounds/incorrectSound.wav'
+import correctAud from './sounds/correctSound.wav'
+import incorrectAud from './sounds/incorrectSound.wav'
 
 export default function Quiz() {
 	const questions = [
@@ -66,6 +66,8 @@ export default function Quiz() {
 	const [answerSelected, setAnswerSelected] = useState(false);
 
 	
+	const correctSound = new Audio(correctAud);
+	const incorrectSound = new Audio(incorrectAud);
 
 
 	// const handleAnswerButtonClick1 = (isCorrect) =>{
@@ -120,11 +122,13 @@ export default function Quiz() {
 			//    setSelectedCorrectAnswer(true);
 			setIsAnswerCorrect(true);
 			setAnswerSelected(true);
+			correctSound.play();
 			} else {
 			  setClicked(true);
 			//  setSelectedCorrectAnswer(false);
 			setIsAnswerCorrect(false);
 			setAnswerSelected(true);
+			incorrectSound.play();
 			}
 			setShowAnswerFeedback(true);
 			
@@ -134,7 +138,7 @@ export default function Quiz() {
 
 	if (!gameStarted) {
 		return <Layout>
-			<h1 className={style.startPage}>These marine adults can look very different from the larvae they once were. Can you find their plankton baby pictures? </h1>
+			<h1 className={style.startPage}>These marine adults can look very different from the larvae they once were. Can you match these marine animals with their baby pictures?</h1>
 			<button onClick={startGame} className={style.startBtn}>Start</button>;
 			
 			</Layout>
@@ -165,7 +169,8 @@ export default function Quiz() {
 		
 	};
 
-	
+	const answerImagePath = `${correctAnswer}`;
+
 	return (
 		<Layout>
 		
@@ -226,8 +231,11 @@ export default function Quiz() {
                 {isAnswerCorrect ? "Congratulations on your correct answer!" : "Unfortunately, the answer is incorrect."}
 				<br></br>
 				<br></br>
-                Correct Answer is: {correctAnswer}
 				
+                {/* Correct Answer is: {correctAnswer} */}
+				Correct Answer is: 
+				<img src={answerImagePath} alt={correctAnswer} className={style.answerImg}/>
+
             </div>
         )}
 					{/* <div>
