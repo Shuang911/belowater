@@ -1,271 +1,97 @@
-import React, { useState } from 'react';
-import style from "./index.module.css";
+import React, { useState } from "react";
+import Quiz1 from './Quiz1'
+import Quiz2 from './Quiz2'
 import Layout from "../../components/Layout";
-import Tuna from './images/tuna.jpg'
-import img1 from './images/1.png'
-import img2 from './images/2.png'
-import img3 from './images/3.png'
-import flounder from './images/flounder.jpg'
-import img5 from './images/5.png'
-import img6 from './images/6.png'
-import img7 from './images/7.png'
-import dogWhelk from './images/dogWhelk.jpg'
-import img8 from './images/8.png'
-import img9 from './images/9.png'
-import img10 from './images/10.png'
-import correctAud from './sounds/correctSound.wav'
-import incorrectAud from './sounds/incorrectSound.wav'
+import style from "./index.module.css";
+import { useSpring, animated } from 'react-spring';
 
-export default function Quiz() {
-	const questions = [
-		{
-			questionText: "I swim fast: up to 70 kilometers (43 miles) per hour. And I migrate vast distances to feed and to lay eggs. I can grow as big as 3 meters (10 feet), but when I was a larva I was the size of a lentil.  Can you find my plankton baby picture?",
-			hintImg:{image:Tuna},
-			answerOptions: [
-				
-				{ id : 0, image: img1, isCorrect: false },
-				{ id : 1, image: img2, isCorrect: false },
-				{ id : 2, image: img3, isCorrect: true },
-			],
-			answer:{id: 0, image:img3, text:"q1"}
-		},
-		{
-			questionText: 'I lie on my side on the seafloor waiting to ambush prey. Because my left side always faces up, both my eyes are on the left. But when I was a baby, I had eyes on both sides, like other fishes. Can you find my plankton baby picture?',
-			hintImg:{image:flounder},
-			answerOptions: [
-				{ id : 0, image: img5, isCorrect: true },
-				{ id : 1, image: img6, isCorrect: false },
-				{ id : 2, image: img7, isCorrect: false },
-			],
-			answer:{id: 0, image:img5, text:"q2"}
-		},
-		{
-			questionText: 'I’m a dog whelk, and I live on rocky shores. My strong, hard, pointed shell protects me from birds and crabs. When I first emerged from my egg capsule, my shell was thin and almost transparent. Can you find my plankton baby picture?',
-			hintImg:{image:dogWhelk},
-			answerOptions: [
-				{ id : 0, image: img8, isCorrect: false },
-				{ id : 1, image: img9, isCorrect: true },
-				{ id : 2, image: img10, isCorrect: false },
-			],
-			answer:{id: 0, image:img9, text:"q3"}
-		},
-	];
-	
-	const [gameStarted, setGameStarted] = useState(false);
-	const [currentQuestion,setCurrentQuestion] =useState(0);
-	const [showScore,setShowScore] = useState(false);
-	const [score,setScore] = useState(0);
-	// const [answerStatus, setAnswerStatus] = useState(null);
-	const [clicked, setClicked]  =useState(false);
-	const [clickedAnswers, setClickedAnswers] = useState([]);
-	// const [selectedCorrectAnswer, setSelectedCorrectAnswer] = useState(false);
+function Quiz() {
+  const [quizType, setQuizType] = useState("");
+  const [hoveringQ1, setHoveringQ1] = useState(false);
+  const [hoveringQ2, setHoveringQ2] = useState(false);
+  const [hoveringQ3, setHoveringQ3] = useState(false);
 
-	const [correctAnswer, setCorrectAnswer] = useState('');
-	const [showAnswerFeedback, setShowAnswerFeedback] = useState(false);
-	const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
-	const [answerSelected, setAnswerSelected] = useState(false);
+  const springPropsQ1 = useSpring({
+    transform: hoveringQ1 ? 'scale(1.15)' : 'scale(1)',
+    // transform: hoveringQ1 ? 'rotate(3deg)' : 'rotate(0deg)'
+  });
 
-	
-	const correctSound = new Audio(correctAud);
-	const incorrectSound = new Audio(incorrectAud);
+  const springPropsQ2 = useSpring({
+    transform: hoveringQ2 ? 'scale(1.15)' : 'scale(1)',
+    // transform: hoveringQ2 ? 'rotate(3deg)' : 'rotate(0deg)'
+  });
 
+  const springPropsQ3 = useSpring({
+    transform: hoveringQ3 ? 'scale(1.15)' : 'scale(1)',
+    // transform: hoveringQ2 ? 'rotate(3deg)' : 'rotate(0deg)'
+  });
 
-	// const handleAnswerButtonClick1 = (isCorrect) =>{
-	// 	if (isCorrect) {
-			
-	// 		setAnswerStatus(true);
-	// 		setScore(score+1);
-	// 		setClicked(true)
-	// 		const nextQuestion = currentQuestion +1;
-	// 		if(nextQuestion < questions.length){
-	// 			setCurrentQuestion(nextQuestion);
-	// 		}else{
-			
-	// 			setShowScore(true);
-	// 		}
-				
-	// 	  }else {
-			
-	// 		setAnswerStatus(false);
-	// 		const nextQuestion = currentQuestion +1;
-	// 		if(nextQuestion < questions.length){
-	// 			setCurrentQuestion(nextQuestion);
-	// 		}else{
-				
-	// 			setShowScore(true);
-	// 		}
-	// 	  }
-		
-	// }
-	// const optionStyle = {
-	// 	backgroundColor: "transparent",
-	// 	border: "2px solid transparent",
-	//   };
-	//   const correctOptionStyle = {
-	// 	backgroundColor: "green",
-	// 	border: "2px solid green",
-	//   };
-	//   const incorrectOptionStyle = {
-	// 	backgroundColor: "red",
-	// 	border: "2px solid red",
-	//   };
-	const startGame = () => {
-		setGameStarted(true);
-	  };
-	
-	const  handleAnswerButtonClick1 = (isCorrect) =>{
-		if (!clickedAnswers.includes(currentQuestion)) {
-			setClickedAnswers([...clickedAnswers, currentQuestion]);
-		
-			if (isCorrect && !clickedAnswers.includes(currentQuestion)) {
-			  setScore(score + 1);
-			//    setSelectedCorrectAnswer(true);
-			setIsAnswerCorrect(true);
-			setAnswerSelected(true);
-			correctSound.play();
-			} else {
-			  setClicked(true);
-			//  setSelectedCorrectAnswer(false);
-			setIsAnswerCorrect(false);
-			setAnswerSelected(true);
-			incorrectSound.play();
-			}
-			setShowAnswerFeedback(true);
-			
-		  }
-		  setCorrectAnswer(questions[currentQuestion].answer.image);
-	}
+  function handleQuizTypeSelection(type) {
+    setQuizType(type);
+  }
 
-	if (!gameStarted) {
-		return <Layout>
-			<h1 className={style.startPage}>These marine adults can look very different from the larvae they once were. Can you match these marine animals with their baby pictures?</h1>
-			<button onClick={startGame} className={style.startBtn}>Start</button>;
-			
-			</Layout>
-	  }
+  function renderQuiz() {
+    switch (quizType) {
+      case "quiz1":
+        return <Quiz1 />;
+      case "quiz2":
+        return <Quiz2 />;
 
-	const goNextQusetion = () =>{
-		setClicked(false);
-		const nextQuestion = currentQuestion +1;
+      default:
+        return null;
+    }
+  }
 
-			if(nextQuestion < questions.length){
-				setCorrectAnswer(questions[nextQuestion].answer.image);
-				setCurrentQuestion(nextQuestion);
+  return (
+    <div>
+      {quizType ? (
+        renderQuiz()
+      ) : (
+        <div>
+          <Layout>
+          <h1 className={style.QuizType}>Select Quiz Type:</h1>
+          {/* <button className={style.QuizTypeBtn} onClick={() => handleQuizTypeSelection("quiz1")}>Find My Plankton Baby Picture</button> */}
+          {/* <button className={style.QuizTypeBtn} onClick={() => handleQuizTypeSelection("quiz2")}>Quiz 2</button> */}
+          {/* <button className={style.QuizTypeBtn} onClick={() => handleQuizTypeSelection("quiz3")}>Quiz 3</button> */}
+         
+          <animated.button
+          style={springPropsQ1}
+          className={style.QuizTypeBtn}
+          onMouseEnter={() => setHoveringQ1(true)}
+          onMouseLeave={() => setHoveringQ1(false)}
+          onClick={() => handleQuizTypeSelection('quiz1')}
+        >
+          Find Baby Picture
+        </animated.button>  
+        
+        <animated.button
+          style={springPropsQ2}
+          className={style.QuizTypeBtn}
+          onMouseEnter={() => setHoveringQ2(true)}
+          onMouseLeave={() => setHoveringQ2(false)}
+          onClick={() => handleQuizTypeSelection('quiz2')}
+        >
+          Guess  Who  I  am
+        </animated.button>
+          
+        <animated.button
+          style={springPropsQ3}
+          className={style.QuizTypeBtn}
+          onMouseEnter={() => setHoveringQ3(true)}
+          onMouseLeave={() => setHoveringQ3(false)}
+          onClick={() => handleQuizTypeSelection('quiz3')}
+        >
+          Quiz 3
+        </animated.button>
+          
+          </Layout>
+        </div>
+      )}
+    </div>
+  );
 
-				
-    			
-
-			}else{
-				
-				setShowScore(true);
-			}
-
-	}
-
-	const handleNextButtonClick = () => {
-		setAnswerSelected(false);
-		setShowAnswerFeedback(false);
-		goNextQusetion();
-		
-	};
-
-	const answerImagePath = `${correctAnswer}`;
-
-	return (
-		<Layout>
-		
-		<div className={style.app}>
-			{showScore ? (
-				<div>
-					<div className={style.completedNotice}>Well done!</div>
-					<div className={style.scoresection}> You scored {score} out of {questions.length}</div>
-				</div>
-			) : (
-				<>
-					
-					<div className={style.questionsection}>
-						<div className={style.questioncount}>
-							<span>Quiz {currentQuestion+1}</span> of {questions.length}
-						</div>
-						<img src={questions[currentQuestion].hintImg.image} alt="" className={style.questionImg}/>						
-						
-						<div className={style.questiontext}>{questions[currentQuestion].questionText}</div>
-
-						
-
-					</div>
-					<div className={style.answersection}>
-						 {questions[currentQuestion].answerOptions.map((answerOptions) => (							
-							<button 
-								key={answerOptions.image} 
-								
-								onClick={() => handleAnswerButtonClick1(answerOptions.isCorrect)}
- 							>
-								<img src={answerOptions.image} alt={`Option ${answerOptions.image}`} />
-								
-							
-							</button>
-							
-						))} 
-						
-						{/* {questions[currentQuestion].answerOptions.map((answerOption) => {
-								const isCorrect = answerOption.isCorrect;
-								const image = answerOption.image;
-								const style = clicked ? (isCorrect ? correctOptionStyle : incorrectOptionStyle) : optionStyle;
-								return (
-									<button 
-									key={image}
-									style={style}
-									onClick={() => handleAnswerButtonClick1(isCorrect)}
-									>
-									<img src={image} alt={`Option ${image}`} />
-									</button>
-								);
-								})} */}
-
-						
-					</div> 
-					
-					{showAnswerFeedback && (
-            <div className={isAnswerCorrect ? style.correct : style.incorrect}>
-                {isAnswerCorrect ? "Congratulations on your correct answer!" : "Unfortunately, the answer is incorrect."}
-				<br></br>
-				<br></br>
-				
-                {/* Correct Answer is: {correctAnswer} */}
-				Correct Answer is: 
-				<img src={answerImagePath} alt={correctAnswer} className={style.answerImg}/>
-
-            </div>
-        )}
-					{/* <div>
-						<button className={style.nextQbutton} onClick={handleNextButtonClick}> Next</button>
-					</div> */}
-					{answerSelected && (
-  <button className={style.nextQbutton} onClick={handleNextButtonClick}> Next</button>
-)}
-
-
-					{/* {answerStatus !== null && (
-						<div className={style.answerstatus}>
-						{answerStatus ? (
-							<div className={style.correct}>
-							<span>your choose for last quiz is Correct!</span>
-							</div>
-						) : (
-							<div className={style.incorrect}>
-							<span>your choose for last quiz is Incorrect!</span>
-							</div>
-						)}
-		</div>
-					)} */}
-				</>
-			)}
-		</div>
-		</Layout>
-		
-	);
-	
 }
+
+export default Quiz;
 
 

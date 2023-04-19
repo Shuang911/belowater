@@ -4,7 +4,6 @@ import Game from "../pages/Game";
 import About from "../pages/About";
 import Quiz from "../pages/Quiz"
 
-
 const router = createBrowserRouter([
   {
     path: "/",

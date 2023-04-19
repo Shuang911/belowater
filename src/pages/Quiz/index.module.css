@@ -13,14 +13,28 @@
   width: 1440px;
   height: 1000px;
   /* background-color: #2b3e80; */
-  color: #b2f826;
-  font-size: 3rem;
+  color: #f9ea0d;
+  font-size: 4rem;
   font-weight: bold;
   display: block;
   margin: 2rem auto;
-  background: url("./images/0.png") no-repeat center / cover; 
+  background: url("./images/img001.png") no-repeat center / cover; 
   border-radius: 15px;
-  padding: 230px;
+  padding: 80px;
+}
+
+.startPage2{
+  width: 1440px;
+  height: 1000px;
+  /* background-color: #2b3e80; */
+  color: #f9ea0d;
+  font-size: 4rem;
+  font-weight: bold;
+  display: block;
+  margin: 2rem auto;
+  background: url("./images2/img00.png") no-repeat center / cover; 
+  border-radius: 15px;
+  padding: 80px;
 }
 
 .startBtn{
@@ -36,6 +50,40 @@
   margin: 2rem auto
 }
 
+.QuizType{
+  display: flex;
+  font-size: 3rem;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  color: #6e70ee;
+}
+
+.QuizTypeBtn{
+  width: 500px;
+  padding: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #2b3e80;
+  color: #b0b1ed;
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  margin: 2rem auto
+}
+
+.playAgain{
+  width: 300px;
+  padding: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #2b3e80;
+  color: #b0b1ed;
+  font-size: 3rem;
+  font-weight: bold;
+  display: block;
+  margin: 2rem auto
+}
 
 
 .completedNotice{
@@ -69,12 +117,12 @@
 }
 
 .questioncount {
-  margin-bottom: 50px;
+  margin-bottom: 5px;
   
 }
 
 .questioncount span {
-  font-size: 70px;
+  font-size: 55px;
 }
 
 .questiontext {
@@ -84,7 +132,7 @@
 .nextQbutton
 {
   width: 180px;
-  font-size: 50px;
+  font-size: 3rem;
   color: #ffffff;
   background-color: #012345;
   border-radius: 25px;
@@ -132,7 +180,7 @@
 
 .answersection button:focus {
   outline:#4569ee;
-  background-color: #e5bcbc;
+  background-color: #e4d355;
 }
 
 /* .answer.section button:active {
@@ -149,11 +197,17 @@
   background-color: #2f922f;
   color: white;
   margin: 2rem auto;
+  font-size: 3rem;
 }
 
 .incorrect  {
   background-color: #f30707;
   color: white;
   margin: 2rem auto;
+  font-size: 3rem;
 }
 
+/* .answerText{
+  color: rgb(67, 100, 231);
+  font-size: 3rem;
+} */
