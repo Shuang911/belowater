@@ -34,9 +34,6 @@
 }
 
 .hookbutton {
-  position: absolute;
-  top: 30px;
-  left: 30px;
   background-color: #0b7dda;
   color: white;
   padding: 16px 32px;

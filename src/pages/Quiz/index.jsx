@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Quiz1 from './Quiz1'
 import Quiz2 from './Quiz2'
+import Quiz3 from './Quiz3'
 import Layout from "../../components/Layout";
 import style from "./index.module.css";
 import { useSpring, animated } from 'react-spring';
@@ -36,7 +37,8 @@ function Quiz() {
         return <Quiz1 />;
       case "quiz2":
         return <Quiz2 />;
-
+        case "quiz3":
+          return <Quiz3 />;
       default:
         return null;
     }
@@ -49,12 +51,17 @@ function Quiz() {
       ) : (
         <div>
           <Layout>
-          <h1 className={style.QuizType}>Select Quiz Type:</h1>
-          {/* <button className={style.QuizTypeBtn} onClick={() => handleQuizTypeSelection("quiz1")}>Find My Plankton Baby Picture</button> */}
-          {/* <button className={style.QuizTypeBtn} onClick={() => handleQuizTypeSelection("quiz2")}>Quiz 2</button> */}
-          {/* <button className={style.QuizTypeBtn} onClick={() => handleQuizTypeSelection("quiz3")}>Quiz 3</button> */}
-         
-          <animated.button
+          <h1 className={style.QuizType}>Pick one that interests you</h1>
+          <div>
+          <button className={style.hookbutton} onClick={() => handleQuizTypeSelection("quiz1")}>Find Baby Picture</button>
+         </div>
+          <div>
+          <button className={style.hookbutton} onClick={() => handleQuizTypeSelection("quiz2")}>Guess  Who  I  am</button>
+         </div>
+         {/* <div>
+          <button className={style.hookbutton} onClick={() => handleQuizTypeSelection("quiz3")}>Quiz 3</button>
+          </div> */}
+          {/* <animated.button
           style={springPropsQ1}
           className={style.QuizTypeBtn}
           onMouseEnter={() => setHoveringQ1(true)}
@@ -82,7 +89,7 @@ function Quiz() {
           onClick={() => handleQuizTypeSelection('quiz3')}
         >
           Quiz 3
-        </animated.button>
+        </animated.button> */}
           
           </Layout>
         </div>

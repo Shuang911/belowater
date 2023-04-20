@@ -23,7 +23,7 @@ import incorrectAud from './sounds/incorrectSound.wav'
 export default function Quiz1() {
 	const questions = [
 		{
-			questionText: "I swim fast: up to 70 kilometers (43 miles) per hour. I migrate vast distances to feed and to lay eggs. I can grow as big as 3 meters (10 feet), but when I was a larva I was the size of a lentil.  Can you find my plankton baby picture (click on the picture)?",
+			questionText: "I swim fast: up to 70 kilometers (43 miles) per hour. I migrate vast distances to feed and to lay eggs. I can grow as big as 3 meters (10 feet), but when I was a larva I was the size of a lentil. So, can you find my plankton baby picture (click on the picture)?",
 			hintImg:{image:Tuna},
 			answerOptions: [
 				
@@ -34,7 +34,7 @@ export default function Quiz1() {
 			answer:{id: 0, image:img3, text:"Do you know... As a little fish, I hung out in schools with youngsters my own size."}
 		},
 		{
-			questionText: 'I lie on my side on the seafloor waiting to ambush prey. Because my left side always faces up, both my eyes are on the left. But when I was a baby, I had eyes on both sides, like other fishes. Can you find my plankton baby picture?',
+			questionText: 'I lie on my side on the seafloor waiting to ambush prey. Because my left side always faces up, both my eyes are on the left. But when I was a baby, I had eyes on both sides, like other fishes. So, can you find my plankton baby picture?',
 			hintImg:{image:flounder},
 			answerOptions: [
 				{ id : 0, image: img5, isCorrect: true },
@@ -44,7 +44,7 @@ export default function Quiz1() {
 			answer:{id: 0, image:img5, text:"Do you know... As I grew up, I lost my bright colors—but that’s okay. Now I can change the color and pattern of my skin to help me hide on the seafloor. I can look like sand one minute, and a rocky bottom the next!"}
 		},
 		{
-			questionText: 'I’m a dog whelk, and I live on rocky shores. My strong, hard, pointed shell protects me from birds and crabs. When I first emerged from my egg capsule, my shell was thin and almost transparent. Can you find my plankton baby picture?',
+			questionText: 'I’m a dog whelk, and I live on rocky shores. My strong, hard, pointed shell protects me from birds and crabs. When I first emerged from my egg capsule, my shell was thin and almost transparent. So, can you find my plankton baby picture?',
 			hintImg:{image:dogWhelk},
 			answerOptions: [
 				{ id : 0, image: img8, isCorrect: false },
@@ -54,7 +54,7 @@ export default function Quiz1() {
 			answer:{id: 0, image:img9, text:"Do you know... As a new hatchling, I was so good at crawling that scientists called me a “crawl-away."}
 		},
 		{
-			questionText: "I'm a crab but my long legs make me look like a spider—that’s why I’m called a spider crab. I live in vents and holes deep on the ocean floor. My hard shell helps me scrape up algae and pry open mollusks to eat. But when I was a baby I had no shell. I was transparent!",
+			questionText: "I'm a crab but my long legs make me look like a spider—that’s why I’m called a spider crab. I live in vents and holes deep on the ocean floor. My hard shell helps me scrape up algae and pry open mollusks to eat. But when I was a baby I had no shell. I was transparent! So, can you find my plankton baby picture?",
 			hintImg:{image:crab},
 			answerOptions: [
 				{ id : 0, image: img11, isCorrect: false },
@@ -84,6 +84,7 @@ export default function Quiz1() {
 	const incorrectSound = new Audio(incorrectAud);
 
 	const [correctAnswerText,setCorrectAnswerText] = useState('');
+	const [feedbackmessage, setFeedbackmessage] = useState('');
 	// const handleAnswerButtonClick1 = (isCorrect) =>{
 	// 	if (isCorrect) {
 			
@@ -149,13 +150,19 @@ export default function Quiz1() {
 		  }
 		  setCorrectAnswer(questions[currentQuestion].answer.image);
 		  setCorrectAnswerText(questions[currentQuestion].answer.text);
+		
+		if (score <= 2) {
+			setFeedbackmessage("It seems that you are not very familiar with this topic, cheer up!");
+		  } 
+		else {
+			setFeedbackmessage("You got more than half of the questions right, you're great!");
+		  } 
 	}
 
 	if (!gameStarted) {
 		return <Layout>
 			<h1 className={style.startPage}>These marine adults can look very different from the larvae they once were. Can you match these marine animals with their baby pictures?</h1>
-			<button onClick={startGame} className={style.startBtn}>Start</button>;
-			
+			<button onClick={startGame} className={style.startBtn}>Start!</button>;
 			</Layout>
 	  }
 
@@ -196,6 +203,7 @@ export default function Quiz1() {
 				<div>
 					<div className={style.completedNotice}>Well done!</div>
 					<div className={style.scoresection}> You scored {score} out of {questions.length}</div>
+					<div className={style.feedbackmessage}> {feedbackmessage}</div>
 				</div>
 			) : (
 				<>

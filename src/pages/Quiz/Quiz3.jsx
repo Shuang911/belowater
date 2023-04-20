@@ -4,23 +4,14 @@ import Layout from "../../components/Layout";
 import img1 from './images2/img1.png';
 import img2 from './images2/img2.png';
 import img3 from './images2/img3.png';
-import img4 from './images2/img4.png';
-import img5 from './images2/img5.png';
-import img6 from './images2/img6.png';
-import img7 from './images2/img7.png';
-import img8 from './images2/img8.png';
-import img9 from './images2/img9.png';
-import img10 from './images2/img10.png';
-import img11 from './images2/img11.png';
-import img12 from './images2/img12.png';
 import correctAud from './sounds/correctSound.wav'
 import incorrectAud from './sounds/incorrectSound.wav'
 
 export default function Quiz1() {
 	const questions = [
 		{
-			questionText: "This tiny, big-eyed animal swims in the deep, cold waters off New Zealand. Its bright orange skin is less striking in its dark, bluish environment. It grows slowly and may live more than 100 years. It used to be called 'slimehead' until it became a popular meal. so, Which marine species is it?		",
-			
+			questionText: "This tiny, big-eyed animal swims in the deep, cold waters off New Zealand. Its bright orange skin is less striking in its dark, bluish environment. It grows slowly and may live more than 100 years. It used to be called 'slimehead' until it became a popular meal. So who I am ?		",
+			// hintImg:{image:Tuna},
 			answerOptions: [
 				
 				{ id : 0, image: img1, isCorrect: true },
@@ -28,39 +19,6 @@ export default function Quiz1() {
 				{ id : 2, image: img3, isCorrect: false },
 			],
 			answer:{id: 0, image:img1, text:"It's me ! An orange roughy!"}
-		},
-		{
-			questionText: "This animal can have a wingspan of over 7 feet. To hunt, it flies to great heights and then dives downward to scoop up fish with its large beak. These animals fly in flocks, in long lines or V's, their long necks curved all the way back over their bodies. so, Which marine species is it?",
-			
-			answerOptions: [
-				
-				{ id : 0, image: img4, isCorrect: false},
-				{ id : 1, image: img5, isCorrect: false},
-				{ id : 2, image: img6, isCorrect: true },
-			],
-			answer:{id: 0, image:img6, text:"It's me !  A brown pelican!"}
-		},
-		{
-			questionText: "This tiny, big-eyed animal swims in the deep, cold waters off New Zealand. Its bright orange skin is less striking in its dark, bluish environment. It grows slowly and may live more than 100 years. It used to be called 'slimehead' until it became a popular meal. so, Which marine species is it?		",
-			
-			answerOptions: [
-				
-				{ id : 0, image: img7, isCorrect: true },
-				{ id : 1, image: img8, isCorrect: false},
-				{ id : 2, image: img9, isCorrect: false },
-			],
-			answer:{id: 0, image:img7, text:"It's me ! A triton trumpet!"}
-		},
-		{
-			questionText: "With their red plumes sticking out of their white shells, these creatures look like giant lipstick containers. They thrive near the fissures of hydrothermal vents, chimney-like structures on the deep ocean floor. They have bacteria inside that use chemicals in the water to make sugar and other food and use it as energy. so, Which marine species is it?		",
-			
-			answerOptions: [
-				
-				{ id : 0, image: img10, isCorrect: false },
-				{ id : 1, image: img11, isCorrect: true},
-				{ id : 2, image: img12, isCorrect: false },
-			],
-			answer:{id: 0, image:img11, text:"It's me ! A giant tubeworm!"}
 		},
 		
 	];
@@ -84,7 +42,6 @@ export default function Quiz1() {
 	const incorrectSound = new Audio(incorrectAud);
 
 	const [correctAnswerText,setCorrectAnswerText] = useState('');
-
 	const [feedbackmessage, setFeedbackmessage] = useState('');
 	// const handleAnswerButtonClick1 = (isCorrect) =>{
 	// 	if (isCorrect) {
@@ -151,16 +108,12 @@ export default function Quiz1() {
 		  }
 		  setCorrectAnswer(questions[currentQuestion].answer.image);
 		  setCorrectAnswerText(questions[currentQuestion].answer.text);
-		
-		if (score < 2) {
+		if (score <= 2) {
 			setFeedbackmessage("It seems that you are not very familiar with this topic, cheer up!");
-		} 
-		else if (score == 2 || score ==3) {
-			setFeedbackmessage("Good job! You can do better next time!");
-		} 
-		else{
-			setFeedbackmessage("You have a 100% correct rate, incredible!");
-		  }
+		  } 
+		else {
+			setFeedbackmessage("You got more than half of the questions right, you're great!");
+		  } 
 	}
 
 	if (!gameStarted) {

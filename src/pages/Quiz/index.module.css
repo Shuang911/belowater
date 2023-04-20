@@ -42,12 +42,18 @@
   padding: 1rem;
   border-radius: 25px;
   cursor: pointer;
-  background-color: #2b3e80;
+  /* background-color: #2b3e80;
+  color: #b0b1ed; */
+  background-color: #3a53ae;
   color: #b0b1ed;
   font-size: 6rem;
   font-weight: bold;
   display: block;
   margin: 2rem auto
+}
+
+.startBtn:hover {
+  background-color: #074375;
 }
 
 .QuizType{
@@ -56,7 +62,7 @@
   align-items: center;
   margin: 0 auto;
   justify-content: center;
-  color: #6e70ee;
+  color: #2f3084;
 }
 
 .QuizTypeBtn{
@@ -69,7 +75,7 @@
   font-size: 2rem;
   font-weight: bold;
   display: block;
-  margin: 2rem auto
+  margin: 2rem auto;
 }
 
 .playAgain{
@@ -131,19 +137,28 @@
 
 .nextQbutton
 {
-  width: 180px;
+  width: 300px;
+  height:120px;
   font-size: 3rem;
-  color: #ffffff;
-  background-color: #012345;
-  border-radius: 25px;
+  /* color: #ffffff;
+  background-color: #012345; */
+  background-color: #3a53ae;
+  color: #b0b1ed;
+  
   display: flex;
   padding: 5px;
   justify-content: center;
   align-items: center;
-  border: 10px solid  #2b3e80;
+  border-radius: 25px;
+  /* border: 10px solid  #2b3e80; */
   cursor: pointer;
   margin: 2rem auto;
 }
+
+.nextQbutton:hover {
+  background-color: #074375;
+}
+
 
 .answerImg{
   display: block;
@@ -211,3 +226,39 @@
   color: rgb(67, 100, 231);
   font-size: 3rem;
 } */
+
+.hookbutton {
+  /* position: absolute;
+  top: 30px;
+  left: 30px; */
+  /* background-color: #0b7dda;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 20px;
+  margin: 0rem auto; */
+
+  width: 500px;
+  padding: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  /* background-color: #0b7dda;
+  color: white; */
+  background-color: #3a53ae;
+  color: #b0b1ed;
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  margin: 2rem auto
+}
+
+.hookbutton:hover {
+  background-color: #074375;
+}
+
+.feedbackmessage{
+  margin: 2rem auto;
+  font-size: 3rem;
+  text-align: center;
+}
