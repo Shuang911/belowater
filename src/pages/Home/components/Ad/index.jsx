@@ -11,7 +11,7 @@ const Ad = () => {
         Children's Science Website for Marine
         <br /> Knowledge in Australia。
       </div>
-      <div className={style.learn}>Learn about</div>
+      {/* <div className={style.learn}>Learn about</div> */}
     </div>
   );
 };

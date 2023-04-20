@@ -108,6 +108,10 @@ const getRandomPlasticsData = (data, num) => {
 
 
 const Game = () => {
+  const [remainingChances, setRemainingChances] = useState(10);
+  const [hookCount, setHookCount] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
+
   const [degree, setDegree] = useState(11);
   const degreeLatest = useLatest(degree);
   const directionLatest = useRef(1);
@@ -120,6 +124,7 @@ const Game = () => {
     open: false,
     desc: "",
   });
+  
 
   const fetchElement = async () => {
     const res = await getMarineAnimals();
@@ -142,7 +147,10 @@ const Game = () => {
 
  
   const handleHook = () => {
+    if (!gameOver) {
+    
     catchElement();
+    }
   };
 
   const swing = () => {
@@ -165,6 +173,14 @@ const Game = () => {
   };
 
   const catchElement = () => {
+    if (hookCount < 10) {
+      setHookCount(hookCount + 1);
+      setRemainingChances(remainingChances - 1);
+    }
+    if (hookCount === 9) {
+      setGameOver(true);
+    }
+    
     clearInterval(timer.current);
     const arc = (degreeLatest.current * Math.PI) / 180;
     const r = height / Math.sin(arc);
@@ -258,6 +274,9 @@ const Game = () => {
 
     timer.current = setInterval(lengthen, 20);
   };
+  
+  const buttonText = gameOver ? "Game Over" : "Hook";
+  const gameOverText = gameOver && <h1>Game Over</h1>;
 
   const handleCatched = (elementIndex) => {
     const descFieldMaps = {
@@ -272,12 +291,30 @@ const Game = () => {
     });
   };
 
+  const [gameStarted, setGameStarted] = useState(false);
+  const startGame = () => {
+  setGameStarted(true);
+   };
+if (!gameStarted) {
+  return <Layout>
+   <h1 className={style.startPage}></h1>
+   <button onClick={startGame} className={style.startBtn}>Play Now!</button>;
+   </Layout>
+   }
+
   return (
     <Layout>
       <div className={style.container} ref={containerRef}>
-        <button className={style.hookbutton} onClick={handleHook}>
-          Hook
+        {/* <button className={style.hookbutton} onClick={handleHook}>
+          Hook {gameOver && <h1>Game Over</h1>}
         </button>
+        <p> {remainingChances} chances left</p > */}
+        <button className={style.hookbutton} onClick={handleHook} disabled={gameOver}>
+        {buttonText}
+      </button>
+      <p>{remainingChances} chances left</p >
+      {/* {gameOverText} */}
+        
         <div
           className={style.rope}
           style={{

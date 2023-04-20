@@ -16,19 +16,19 @@ const Footer = () => {
             happily through various types of science popularization and
             education.
           </div>
-          <div className={style.contact}>
+          {/* <div className={style.contact}>
             <div>996icu@gmail.com</div>
             <button>send</button>
-          </div>
+          </div> */}
         </div>
-        <div className={style.navigation}>
+        {/* <div className={style.navigation}>
           <div>Navigation</div>
           <Link to="/about">About</Link>
           <Link to="/">FAQs</Link>
           <Link to="/">Blog</Link>
           <Link to="/">Parents Support</Link>
           <Link to="/">contacts</Link>
-        </div>
+        </div> */}
         {/* <div className={style.list}>
           {Array(3)
             .fill(null)

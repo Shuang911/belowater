@@ -7,7 +7,7 @@ const menuData = [
   { to: "/", name: "Home" },
   { to: "/game", name: "Ocean Helper Game" },
     { to: "/quiz", name: "Ocean Friends Quiz" },
-  { to: "/about", name: "About" },
+  // { to: "/about", name: "About" },
 ];
 
 const Header = () => {
@@ -15,10 +15,12 @@ const Header = () => {
 
   return (
     <div className={style.header}>
-      <div className= {style.logo}>
-        < img src={require("./images/Logo.png")} alt="" />
-        Oceanledge
-      </div>
+      <div className={style.logo}>
+      <a href="/" style={{ display: "flex", alignItems: "center" }}>
+       <img src={require("./images/Logo.png")} alt="" />
+       <span className={style.logoText}>Oceanledge</span>
+     </a>
+     </div>
       <div className={style.menu}>
         {menuData.map((menu, index) => {
           return (

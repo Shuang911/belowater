@@ -4,6 +4,7 @@ import Game from "../pages/Game";
 import About from "../pages/About";
 import Quiz from "../pages/Quiz";
 import Puzzle from "../pages/Puzzle"
+import ImageIdentification   from "../pages/Identification"
 
 const router = createBrowserRouter([
   {
@@ -14,18 +15,24 @@ const router = createBrowserRouter([
     path: "/game",
     Component: Game,
   },
+  // {
+  //   path: "/about",
+  //   Component: About,
+  // },
   {
-    path: "/about",
-    Component: About,
-  },
-  {
-    path:"/quiz",
+    path: "/quiz",
     Component: Quiz,
   },
-  // {
-  //   path:"/puzzle",
-  //   Component: Puzzle,
-  // }
+  {
+    path:"/puzzle",
+    Component: Puzzle,
+  },
+
+  { 
+    path: "/identification", 
+    Component: ImageIdentification 
+  },
+  
 ]);
 
 export default router;

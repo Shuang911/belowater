@@ -4,7 +4,7 @@ import Quiz2 from './Quiz2'
 import Quiz3 from './Quiz3'
 import Layout from "../../components/Layout";
 import style from "./index.module.css";
-import { useSpring, animated } from 'react-spring';
+//import { useSpring, animated } from 'react-spring';
 
 function Quiz() {
   const [quizType, setQuizType] = useState("");
@@ -12,20 +12,20 @@ function Quiz() {
   const [hoveringQ2, setHoveringQ2] = useState(false);
   const [hoveringQ3, setHoveringQ3] = useState(false);
 
-  const springPropsQ1 = useSpring({
-    transform: hoveringQ1 ? 'scale(1.15)' : 'scale(1)',
-    // transform: hoveringQ1 ? 'rotate(3deg)' : 'rotate(0deg)'
-  });
+  // const springPropsQ1 = useSpring({
+  //   transform: hoveringQ1 ? 'scale(1.15)' : 'scale(1)',
+  //   // transform: hoveringQ1 ? 'rotate(3deg)' : 'rotate(0deg)'
+  // });
 
-  const springPropsQ2 = useSpring({
-    transform: hoveringQ2 ? 'scale(1.15)' : 'scale(1)',
-    // transform: hoveringQ2 ? 'rotate(3deg)' : 'rotate(0deg)'
-  });
+  // const springPropsQ2 = useSpring({
+  //   transform: hoveringQ2 ? 'scale(1.15)' : 'scale(1)',
+  //   // transform: hoveringQ2 ? 'rotate(3deg)' : 'rotate(0deg)'
+  // });
 
-  const springPropsQ3 = useSpring({
-    transform: hoveringQ3 ? 'scale(1.15)' : 'scale(1)',
-    // transform: hoveringQ2 ? 'rotate(3deg)' : 'rotate(0deg)'
-  });
+  // const springPropsQ3 = useSpring({
+  //   transform: hoveringQ3 ? 'scale(1.15)' : 'scale(1)',
+  //   // transform: hoveringQ2 ? 'rotate(3deg)' : 'rotate(0deg)'
+  // });
 
   function handleQuizTypeSelection(type) {
     setQuizType(type);
