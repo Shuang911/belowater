@@ -38,8 +38,6 @@ const Home = () => {
         </div>
         <div className="absolute top-[15.9rem] left-[0rem] text-[2.25rem] leading-[4rem] text-darkslategray-200 flex items-center w-[18.31rem] h-[9.63rem]">
           <span className="[line-break:anywhere] w-full">
-            <p className="m-0">Our latest</p>
-            <p className="m-0">projects</p>
           </span>
         </div>
         <img

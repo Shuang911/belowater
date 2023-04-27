@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const NavigationContainer = ({
+const Navigation = ({
   dimensionsText,
   dimensionsText2,
   dimensionsText3,
@@ -120,16 +120,21 @@ const NavigationContainer = ({
           >
             Events
           </div> */}
-          <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem]">
-            Ocean Story
-          </div>
-          <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem]">
-            Ocean Game
-          </div>
+
+          <a href="/story">
+            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem]">
+              Ocean Story
+            </div>
+          </a>
+          <a href="/game">
+            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem]">
+              Ocean Game
+            </div>
+          </a>
         </div>
       </div>
     </div>
   );
 };
 
-export default NavigationContainer;
+export default Navigation;

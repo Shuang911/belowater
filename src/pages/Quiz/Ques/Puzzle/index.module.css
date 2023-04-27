@@ -1,0 +1,32 @@
+.board{
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  margin: 2rem auto;
+  
+}
+
+.board img{
+  
+  width: 100px;
+  height: 100px;
+}
+
+.turns{
+  display: flex;
+  font-size: 2rem;
+}
+
+.suc{
+  
+  font-size: 2rem; 
+  margin: 3rem auto;
+  display: block;
+  color: rgb(246, 124, 124);
+  text-align: center;
+  background: url("./success_icon_194168.png") no-repeat center / contain ; 
+  
+}
+
+

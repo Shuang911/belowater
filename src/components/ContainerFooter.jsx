@@ -4,7 +4,6 @@ import NavigationContainer from "./NavigationContainer";
 
 const ContainerFooter = () => {
   const navigate = useNavigate();
-
   const onFAQsTextClick = useCallback(() => {
     navigate("/events");
   }, [navigate]);

@@ -5,14 +5,16 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Quiz1 from "./pages/Quiz1";
+import Quiz from "./pages/Quiz/Quiz";
 import Error404 from "./pages/Error404";
 import Game from "./pages/Game/Game";
 import Story from "./pages/Story/Story";
 import Map from "./pages/Story/Map";
 // import Facts from "./pages/Facts";
 import Fishing from "./pages/Game/Fishing";
-import Quiz2 from "./pages/Quiz2";
+import Quiz1 from "./pages/Quiz/Ques/Quiz1copy";
+import Puzzle from "./pages/Quiz/Ques/Puzzle";
+import Quiz3 from "./pages/Quiz/Ques/Quiz3";
 import Identification from "./pages/Identification";
 import { useEffect } from "react";
 
@@ -89,12 +91,16 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/quiz1" element={<Quiz1 />} />
+      <Route path="/quiz" element={<Quiz />} />
+
       <Route path="/*" element={<Error404 />} />
       <Route path="/game" element={<Game />} />
       <Route path="/story" element={<Story />} />
       <Route path="/fishing" element={<Fishing />} />
       {/* <Route path="/facts" element={<Facts />} /> */}
-      <Route path="/quiz2" element={<Quiz2 />} />
+      <Route path="/quiz2" element={<Quiz1 />} />
+      <Route path="/quiz3" element={<Quiz3 />} />
+      <Route path="/puzzle" element={<Puzzle />} />
       <Route path="/identification" element={<Identification />} />
       <Route path="/map" element={<Map />} />
     </Routes>

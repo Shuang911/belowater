@@ -13,6 +13,34 @@ const Story = () => {
 
 
   return (
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div className="relative bg-ghostwhite w-full h-[150.75rem] overflow-hidden text-left text-[0.88rem] text-black font-catamaran">
        <Header />
       <NavigationContainer
