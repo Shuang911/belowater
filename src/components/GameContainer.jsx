@@ -9,18 +9,17 @@ const GameContainer = () => {
 
   return (
     <div className="relative w-[71.88rem] h-[21.69rem] shrink-0 text-left text-[1.5rem] text-white font-catamaran">
-        {/* <img
+      {/* <img
           className="absolute top-0 left-0 rounded-31xl w-72 h-21 object-cover"
           alt=""
           src="/image1@2x.png"
         /> */}
-        <button
-          className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-4 py-2"
-          onClick={onClick}
-        >
-          Play Now
-        </button>
-  
+      <button
+        className="bottom-0 left-2/4 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-4 py-2 absolute z-50"
+        onClick={onClick}
+      >
+        Play Now
+      </button>
 
       <img
         className="absolute h-[99.68%] w-[98.25%] top-[0%] right-[0.9%] bottom-[0.32%] left-[0.85%] max-w-full overflow-hidden max-h-full object-cover"

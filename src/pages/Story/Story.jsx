@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import NavigationContainer from "../../components/NavigationContainer";
-import Map from './Map';
-import Header from '../../components/Header'
+import Map from "./Map";
+import Header from "../../components/Header";
 
 const Story = () => {
   const navigate = useNavigate();
@@ -11,16 +11,28 @@ const Story = () => {
     navigate("/events");
   }, [navigate]);
 
-
   return (
-
-    <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
-          <Header />
-          
-          
-          
-          
-          <img
+    <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] h-[150rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
+      <Header />
+      <NavigationContainer
+        dimensionsText="/vector-13.svg"
+        dimensionsText2="/path6.svg"
+        dimensionsText3="/path7.svg"
+        dimensionsText4="/ellipse-13.svg"
+        dimensionsText5="/vector-23.svg"
+        dimensionsText6="/vector-33.svg"
+        dimensionsText7="/vector-43.svg"
+        dimensionsText8="/vector-53.svg"
+        dimensionsText9="/vector-63.svg"
+        dimensionsText10="/vector-73.svg"
+        dimensionsText11="/vector-83.svg"
+        propPosition="absolute"
+        propFlexShrink="unset"
+        propTop="128.94rem"
+        propLeft="3.13rem"
+        onFAQsTextClick={onFAQsTextClick}
+      />
+      <img
         className="absolute top-[9.63rem] left-[3.13rem] w-[71.88rem] h-[20.75rem] object-cover"
         alt=""
         src="/layer-62@2x.png"
@@ -53,13 +65,7 @@ const Story = () => {
           sssss
         </div>
       </div>
-    
-            
-          
-          
-          
-          
-          
+    </div>
   );
 };
 
