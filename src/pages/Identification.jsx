@@ -77,7 +77,7 @@ const Identification = () => {
 
   return (
     <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0rem] box-border items-center justify-center gap-[3.13rem] text-center text-[1.75rem] text-indigo_900 font-abyssinica-sil">
-       <Header />
+      <Header />
       <div className="relative w-[73.29rem] h-[21.69rem] shrink-0 text-[3.13rem] text-midnightblue-200 font-catamaran">
         <img
           className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-61xl max-w-full overflow-hidden max-h-full object-cover"
@@ -113,6 +113,7 @@ const Identification = () => {
             </b>
           </div>
         </div>
+       
         <InputContainer />
         <BelugaContainer />
         <div className="absolute top-[0.02rem] left-[40.94rem] w-[28.44rem] h-[9.75rem] text-dimgray font-catamaran">
@@ -161,7 +162,7 @@ const Identification = () => {
           </div>
         </div>
       </div>
-       <ContainerFooter />
+      <ContainerFooter />
     </div>
   );
 };
