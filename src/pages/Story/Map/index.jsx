@@ -53,10 +53,9 @@ const Mapbox = () => {
     try {
       const res = await getLocation();
       const data = res.data;
-
       const markers = data.map((location) => ({
-        name: location.name,
-        category: location.category,
+        name: location.vernacularName,
+        category: location.animal_category,
         position: {
           lat: Number(location.latitude),
           lng: Number(location.longitude),
@@ -96,12 +95,7 @@ const Mapbox = () => {
     },
   };
 
-  const animalIcons = {
-    whale: "https://example.com/icon1.png",
-    doplin: "https://icons8.com/icon/Py-drGxkGEEr/dolphin",
-    分类3: "https://example.com/icon3.png",
-    // ...
-  };
+  const animalIcons = {};
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyBAPVj00ylUdtRjE3FuA9DWE2YB7xRFaiI",
@@ -124,16 +118,14 @@ const Mapbox = () => {
           zoom={4}
           options={mapOptions}
         >
-          {markers.map((markers, index) => (
+          {markers.map((markers) => (
             <Marker
-              key={index}
-              //parseFloat(marker.latitude)
+              key={markers.index}
               position={{
                 lat: Number(markers.latitude),
                 lng: Number(markers.longitude),
               }}
-              title={location.category}
-              icon={animalIcons[location.category]}
+              title={markers.category}
             />
           ))}
         </GoogleMap>
