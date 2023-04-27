@@ -2,8 +2,9 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import InputContainer from "../components/InputContainer";
 import BelugaContainer from "../components/BelugaContainer";
-import NavigationContainer from "../components/NavigationContainer";
+import ContainerFooter from "../components/ContainerFooter";
 import { useState, useEffect, useRef } from 'react';
+import Header from "../components/Header";
 //import * as mobilenet from "@tensorflow-models/mobilenet";
 const Identification = () => {
     const navigate = useNavigate();
@@ -76,52 +77,7 @@ const Identification = () => {
 
   return (
     <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0rem] box-border items-center justify-center gap-[3.13rem] text-center text-[1.75rem] text-indigo_900 font-abyssinica-sil">
-     <div className="flex flex-row items-center justify-start gap-[1.31rem] font-abyssinica-sil">
-        <a
-          href="/"
-          className="relative w-[2.38rem] h-[2.38rem] shrink-0 overflow-hidden"
-        >
-          <img className="w-full h-full" alt="" src="/logo2.svg" />
-        </a>
-        <div className="relative leading-[109.5%] inline-block w-[10.63rem] h-[2rem] shrink-0">
-          Oceanledge
-        </div>
-        <div className="flex flex-row items-center justify-center gap-[3.13rem] text-[1.13rem]">
-          <a
-            href="/home"
-            className="relative w-[3.63rem] h-[1.5rem] shrink-0 text-[1.38rem]"
-          >
-            <div className="absolute h-[166.67%] w-[179.31%] top-[-33.33%] right-[-39.66%] bottom-[-33.33%] left-[-39.66%] rounded-lg bg-ghostwhite box-border hidden border-[3px] border-solid border-goldenrod" />
-            <div className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_29px)] leading-[1.5rem]">
-              Home
-            </div>
-          </a>
-          <a
-            href="/game"
-            className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.75rem] shrink-0"
-          >
-            Ocean Helper
-          </a>
-          <a
-            href="/quiz1"
-            className="relative leading-[155.5%] inline-block w-[9.88rem] h-[1.81rem] shrink-0"
-          >
-            Ocean Friend Quiz
-          </a>
-          <a
-            href="/identification"
-            className="relative leading-[155.5%] inline-block w-[10.56rem] h-[1.81rem] shrink-0"
-          >
-            Identification
-          </a>
-          {/* <a
-            href="/facts"
-            className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.69rem] shrink-0"
-          >
-            Ocean Facts
-          </a> */}
-        </div>
-      </div>
+     <Header />
       <div className="relative w-[73.29rem] h-[21.69rem] shrink-0 text-[3.13rem] text-midnightblue-200 font-catamaran">
         <img
           className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-61xl max-w-full overflow-hidden max-h-full object-cover"
@@ -205,20 +161,7 @@ const Identification = () => {
           </div>
         </div>
       </div>
-      <NavigationContainer
-        dimensionsText="/vector-17.svg"
-        dimensionsText2="/path14.svg"
-        dimensionsText3="/path15.svg"
-        dimensionsText4="/ellipse-17.svg"
-        dimensionsText5="/vector-27.svg"
-        dimensionsText6="/vector-37.svg"
-        dimensionsText7="/vector-47.svg"
-        dimensionsText8="/vector-57.svg"
-        dimensionsText9="/vector-67.svg"
-        dimensionsText10="/vector-77.svg"
-        dimensionsText11="/vector-87.svg"
-        onFAQsTextClick={onFAQsTextClick}
-      />
+       <ContainerFooter />
     </div>
   );
 };

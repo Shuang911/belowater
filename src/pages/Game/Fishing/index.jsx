@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLatest } from "react-use";
-import { getMarineAnimals } from "../../../services/api";
-import { getPlastics} from "../../../services/api";
-import style from "./index.module.css";
-import CatchResultDialog from ".";
+import Header from "../../../components/Header";
 import NavigationContainer from "../../../components/NavigationContainer";
+import { getMarineAnimals } from "../../../services/api";
+import { getPlastics } from "../../../services/api";
+import style from "./index.module.css";
+import CatchResultDialog from "./dialogs/CatchResult";
 
-var height = 580; 
-var width = 610;
+var height = 580; //地面以下
+var width = 610; //左右范围
 var horizontalPlaneTop = 220;
 var animalSize = {
   width: 200,
@@ -291,67 +292,20 @@ const Fishing = () => {
     });
   };
 
-//   const [gameStarted, setGameStarted] = useState(false);
-//   const startGame = () => {
-//   setGameStarted(true);
-//    };
+  // const [gameStarted, setGameStarted] = useState(false);
+  // const startGame = () => {
+  // setGameStarted(true);
+  //  };
 // if (!gameStarted) {
-//   return 
-
+//   return <Layout>
 //    <h1 className={style.startPage}></h1>
 //    <button onClick={startGame} className={style.startBtn}>Play Now!</button>;
-  
+//    </Layout>
 //    }
 
   return (
-     <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
-        <div className="flex flex-row items-center justify-start gap-[1.31rem] font-abyssinica-sil">
-        <a
-          href="/"
-          className="relative w-[2.38rem] h-[2.38rem] shrink-0 overflow-hidden"
-        >
-          <img className="w-full h-full" alt="" src="/logo2.svg" />
-        </a>
-        <div className="relative leading-[109.5%] inline-block w-[10.63rem] h-[2rem] shrink-0">
-          Oceanledge
-        </div>
-        <div className="flex flex-row items-center justify-center gap-[3.13rem] text-[1.13rem]">
-          <a
-            href="/home"
-            className="relative w-[3.63rem] h-[1.5rem] shrink-0 text-[1.38rem]"
-          >
-            <div className="absolute h-[166.67%] w-[179.31%] top-[-33.33%] right-[-39.66%] bottom-[-33.33%] left-[-39.66%] rounded-lg bg-ghostwhite box-border hidden border-[3px] border-solid border-goldenrod" />
-            <div className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_29px)] leading-[1.5rem]">
-              Home
-            </div>
-          </a>
-          <a
-            href="/game"
-            className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.75rem] shrink-0"
-          >
-            Ocean Helper
-          </a>
-          <a
-            href="/quiz1"
-            className="relative leading-[155.5%] inline-block w-[9.88rem] h-[1.81rem] shrink-0"
-          >
-            Ocean Friend Quiz
-          </a>
-          <a
-            href="/identification"
-            className="relative leading-[155.5%] inline-block w-[10.56rem] h-[1.81rem] shrink-0"
-          >
-            Identification
-          </a>
-          {/* <a
-            href="/facts"
-            className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.69rem] shrink-0"
-          >
-            Ocean Facts
-          </a> */}
-        </div>
-      
-  </div>
+    <div className="relative bg-ghostwhite w-full flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
+          <Header />
       <div className={style.container} ref={containerRef}>
         {/* <button className={style.hookbutton} onClick={handleHook}>
           Hook {gameOver && <h1>Game Over</h1>}
@@ -406,7 +360,7 @@ const Fishing = () => {
         {...openResultProps}
         onClose={() => setOpenResultProps((prev) => ({ ...prev, open: false }))}
       />
-      <NavigationContainer
+  <NavigationContainer
         dimensionsText="/vector-11.svg"
         dimensionsText2="/path2.svg"
         dimensionsText3="/path3.svg"
@@ -425,8 +379,6 @@ const Fishing = () => {
         //onFAQsTextClick={onFAQsTextClick}
       />
     </div>
-
-
   );
 };
 

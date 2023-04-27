@@ -11,7 +11,7 @@ import Game from "./pages/Game/Game";
 import Story from "./pages/Story/Story";
 import Map from "./pages/Story/Map";
 // import Facts from "./pages/Facts";
-import Fishing from "./pages/Game/Fishing"
+import Fishing from "./pages/Game/Fishing";
 import Quiz2 from "./pages/Quiz2";
 import Identification from "./pages/Identification";
 import { useEffect } from "react";

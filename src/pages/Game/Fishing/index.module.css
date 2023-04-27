@@ -1,7 +1,7 @@
 .container {
   width: 1440px;
   height: 868px;
-  background: url("./images/Game.png") no-repeat center / contain; 
+  background: url("./images/Game.png") no-repeat center / contain;
   position: relative;
   margin: 0 auto;
 }
@@ -47,4 +47,31 @@
   background-color: #074375;
 }
 
+.startPage {
+  width: 1290px;
+  height: 1011px;
+  /* background-color: #2b3e80; */
+  color: #f9ea0d;
+  font-size: 4rem;
+  font-weight: bold;
+  display: block;
+  margin: 2rem auto;
+  background: url("./images/Group 4.png") no-repeat center / cover;
+  border-radius: 15px;
+  padding: 80px;
+}
 
+.startBtn {
+  width: 200px;
+  padding: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  /* background-color: #2b3e80;
+  color: #b0b1ed; */
+  background-color: #9258dc;
+  color: #f9f9fc;
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  margin: 2rem auto;
+}
