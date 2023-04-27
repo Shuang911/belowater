@@ -1,6 +1,8 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import NavigationContainer from "../../components/NavigationContainer";
+import Map from './Map';
+import Header from '../../components/Header'
 
 const Story = () => {
   const navigate = useNavigate();
@@ -12,6 +14,7 @@ const Story = () => {
 
   return (
     <div className="relative bg-ghostwhite w-full h-[150.75rem] overflow-hidden text-left text-[0.88rem] text-black font-catamaran">
+       <Header />
       <NavigationContainer
         dimensionsText="/vector-13.svg"
         dimensionsText2="/path6.svg"
@@ -47,6 +50,7 @@ const Story = () => {
       </div>
       <div className="absolute top-[69.63rem] left-[6.25rem] w-[66.25rem] h-[40.31rem]">
         <div className="absolute top-[0rem] left-[0rem] rounded-xl bg-gainsboro w-[66.25rem] h-[40.31rem]" />
+        <Map />
       </div>
       <div className="absolute h-[8.46%] w-[55.2%] top-[75%] right-[22.4%] bottom-[16.54%] left-[22.4%] text-[1.13rem] text-colors-basic-color-1 font-display-03">
         <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xl box-border border-[1px] border-solid border-lightskyblue" />
@@ -62,52 +66,7 @@ const Story = () => {
           sssss
         </div>
       </div>
-       <div className="flex flex-row items-center justify-start gap-[1.31rem] font-abyssinica-sil">
-        <a
-          href="/"
-          className="relative w-[2.38rem] h-[2.38rem] shrink-0 overflow-hidden"
-        >
-          <img className="w-full h-full" alt="" src="/logo2.svg" />
-        </a>
-        <div className="relative leading-[109.5%] inline-block w-[10.63rem] h-[2rem] shrink-0">
-          Oceanledge
-        </div>
-        <div className="flex flex-row items-center justify-center gap-[3.13rem] text-[1.13rem]">
-          <a
-            href="/home"
-            className="relative w-[3.63rem] h-[1.5rem] shrink-0 text-[1.38rem]"
-          >
-            <div className="absolute h-[166.67%] w-[179.31%] top-[-33.33%] right-[-39.66%] bottom-[-33.33%] left-[-39.66%] rounded-lg bg-ghostwhite box-border hidden border-[3px] border-solid border-goldenrod" />
-            <div className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_29px)] leading-[1.5rem]">
-              Home
-            </div>
-          </a>
-          <a
-            href="/game"
-            className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.75rem] shrink-0"
-          >
-            Ocean Helper
-          </a>
-          <a
-            href="/quiz1"
-            className="relative leading-[155.5%] inline-block w-[9.88rem] h-[1.81rem] shrink-0"
-          >
-            Ocean Friend Quiz
-          </a>
-          <a
-            href="/identification"
-            className="relative leading-[155.5%] inline-block w-[10.56rem] h-[1.81rem] shrink-0"
-          >
-            Identification
-          </a>
-          {/* <a
-            href="/facts"
-            className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.69rem] shrink-0"
-          >
-            Ocean Facts
-          </a> */}
-        </div>
-      </div>
+       
     </div>
   );
 };

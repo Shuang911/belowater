@@ -9,6 +9,7 @@ import Quiz1 from "./pages/Quiz1";
 import Error404 from "./pages/Error404";
 import Game from "./pages/Game/Game";
 import Story from "./pages/Story/Story";
+import Map from "./pages/Story/Map";
 // import Facts from "./pages/Facts";
 import Fishing from "./pages/Game/Fishing"
 import Quiz2 from "./pages/Quiz2";
@@ -95,6 +96,7 @@ function App() {
       {/* <Route path="/facts" element={<Facts />} /> */}
       <Route path="/quiz2" element={<Quiz2 />} />
       <Route path="/identification" element={<Identification />} />
+      <Route path="/map" element={<Map />} />
     </Routes>
   );
 }

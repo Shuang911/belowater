@@ -6,8 +6,8 @@ import style from "./index.module.css";
 import CatchResultDialog from ".";
 import NavigationContainer from "../../../components/NavigationContainer";
 
-var height = 580; //地面以下
-var width = 610; //左右范围
+var height = 580; 
+var width = 610;
 var horizontalPlaneTop = 220;
 var animalSize = {
   width: 200,

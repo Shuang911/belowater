@@ -17,11 +17,12 @@ const GameContainer = () => {
         alt=""
         src="/image1@2x.png"
       />
-      <div>
-        <button className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ..."onClick={() => navigate("/fishing")}>
+      <button
+  className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md"
+  onClick={() => navigate("/fishing")}
+>
   Play Now
 </button>
-      </div>
       <img
         className="absolute h-[99.68%] w-[98.25%] top-[0%] right-[0.9%] bottom-[0.32%] left-[0.85%] max-w-full overflow-hidden max-h-full object-cover"
         alt=""

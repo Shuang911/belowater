@@ -13,3 +13,7 @@ export const getMarineAnimals = (params) => {
 export const getPlastics = (params) => {
   return instance.get("/plastics_game", { params });
 };
+
+export const getLocation = (params) => {
+  return instance.get("/animal_location", { params });
+};
