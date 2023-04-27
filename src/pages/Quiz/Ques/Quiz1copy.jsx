@@ -394,8 +394,17 @@ export default function Quiz1() {
                 Click here to print your certificate
               </button>
             ) : (
+              <div>
+              
               <CertificatePage />
+              
+              </div>
             )}
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           </div>
 
           {/* <button className={style.hookbutton1}>Click here to print your certificate</button>	 */}

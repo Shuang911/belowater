@@ -1,7 +1,16 @@
 .quizQuestion2CorrectAnswer{
   position: block;
     top: 1.6rem;
-    left: 20.5rem;
+    left: 10.5rem;
+}
+
+.lo{
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  /* transform: translate(-50%, -50%); */
 }
 
 .quizQuestion2CorrectAnswerChild {

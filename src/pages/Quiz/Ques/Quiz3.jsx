@@ -364,7 +364,11 @@ export default function Quiz1() {
               <CertificatePage />
             )}
           </div>
-
+          <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            {/* <br></br> */}
           {/* <button className={style.hookbutton1}>Click here to print your certificate</button>	 */}
         </div>
       ) : (

@@ -28,6 +28,7 @@ app {
   justify-content: flex-end;
   align-items: flex-end;
   height: 80vh;
+  width: 60rem;
   background: url("./images3/meet-Delfina.jpeg") no-repeat center / cover;
 }
 

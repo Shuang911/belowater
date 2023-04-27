@@ -31,7 +31,7 @@ const CertificatePage = () => {
   return (
     
     
-    <div className={styles.quizQuestion2CorrectAnswer}>
+    <div className={styles.lo}>
       <img
         className={styles.quizQuestion2CorrectAnswerChild}
         alt=""
@@ -65,7 +65,7 @@ const CertificatePage = () => {
           </p>
           <p className={styles.thisCertificateIs}>&nbsp;</p>
           <p className={styles.signedDa}>
-            Signed .................... Date:.............
+            Signed ....Kiyomi............ Date:.............
           </p>
         </div>
       </div>
