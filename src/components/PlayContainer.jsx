@@ -2,9 +2,9 @@ const PlayContainer = () => {
   return (
     <div className="relative w-[60.35rem] h-[41.59rem] shrink-0 text-center text-[1.5rem] text-white font-catamaran">
       <div className="absolute h-[96.09%] w-full top-[3.91%] right-[0%] bottom-[0%] left-[0%] bg-ghostwhite" />
-      <b className="absolute h-[13.52%] w-[53.23%] top-[0%] left-[22.45%] text-[3rem] tracking-[-2px] leading-[3.5rem] inline-block font-display-03 text-colors-basic-color-1">
+      {/* <b className="absolute h-[13.52%] w-[53.23%] top-[0%] left-[22.45%] text-[3rem] tracking-[-2px] leading-[3.5rem] inline-block font-display-03 text-colors-basic-color-1">
         Ocean Friend Quiz
-      </b>
+      </b> */}
       <div className="absolute top-[5.63rem] left-[calc(50%_-_477px)] w-[59.81rem] h-[22.53rem] text-[1.06rem] text-darkslategray-100 font-montserrat">
         <div className="absolute top-[0rem] left-[calc(50%_-_152.3px)] w-[18.24rem] h-[21.11rem] text-[1.56rem] text-midnightblue-100 font-catamaran">
           <div className="absolute top-[3.55rem] left-[calc(50%_-_147.95px)] rounded-11xl bg-white box-border w-[18.49rem] h-[17.69rem] border-[4px] border-solid border-darkorchid" />
@@ -25,8 +25,9 @@ const PlayContainer = () => {
             alt=""
             src="/icon1.svg"
           />
+          
           <div className="absolute top-[8.36rem] left-[calc(50%_-_130.23px)] w-[16.34rem] h-[11.24rem] overflow-hidden">
-            <a href="/quiz2">
+            <a href="/quiz2" className="text-purple hover:bg-red-600">
               <div className="absolute h-[53.37%] top-[42.33%] left-[calc(50%_-_132.68px)] leading-[1.63rem] inline-block w-[16.63rem]">
                 Meet Mallet
               </div>
@@ -36,7 +37,7 @@ const PlayContainer = () => {
           </div>
         </div>
 
-        <a href="/quiz3">
+        <a href="/quiz3" className="text-purple hover:bg-red-600">
           <div className="absolute h-[26.62%] top-[58.25%] left-[calc(50%_-_132.5px)] leading-[1.63rem] inline-block w-[16.63rem]">
             Meet Delfina
           </div>
@@ -66,7 +67,7 @@ const PlayContainer = () => {
             </div>
           </div>
         </div>
-        <a href="/puzzle">
+        <a href="/puzzle" className="text-purple hover:bg-red-600">
           <div className="absolute h-[26.62%] top-[58.25%] left-[calc(50%_+_206.5px)] leading-[1.63rem] inline-block w-[16.63rem]">
             Meet Poppy
           </div>

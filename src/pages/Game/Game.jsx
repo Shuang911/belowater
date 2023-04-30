@@ -57,11 +57,11 @@ const Game = () => {
           src="/3-3334@2x.png"
         />
       </div>
-      <img
+      {/* <img
         className="relative w-[8.42rem] h-[0.89rem] shrink-0"
         alt=""
         src="/pagination.svg"
-      />
+      /> */}  
       <NavigationContainer
         dimensionsText="/vector-11.svg"
         dimensionsText2="/path2.svg"

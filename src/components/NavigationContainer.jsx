@@ -122,12 +122,22 @@ const Navigation = ({
           </div> */}
 
           <a href="/story">
-            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem]">
+            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
+              About
+            </div>
+          </a>
+          <a href="/game">
+            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
+              Events
+            </div>
+          </a>
+          <a href="/story">
+            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
               Ocean Story
             </div>
           </a>
           <a href="/game">
-            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem]">
+            <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
               Ocean Game
             </div>
           </a>

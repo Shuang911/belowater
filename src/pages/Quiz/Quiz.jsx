@@ -37,7 +37,12 @@ const Quiz1 = () => {
             <div className="absolute top-[calc(50%_-_39.15px)] left-[calc(50%_-_317.57px)] leading-[6.88rem] font-black inline-block w-[32.63rem] h-[4.81rem]">
               Ocean Friend Quiz
             </div>
+            <div className="absolute h-[41.95%] top-[78.26%] left-[calc(54%_-_312.7px)] text-[1.06rem] leading-[1.63rem] font-medium font-montserrat text-purple inline-block w-[28.63rem]">
+              Test your knowledge on what you know about our ocean friends!
+            </div>
+            
           </div>
+          
         </div>
       </div>
       <PlayContainer />

@@ -109,7 +109,7 @@ const getRandomPlasticsData = (data, num) => {
 
 
 const Fishing = () => {
-  const [remainingChances, setRemainingChances] = useState(10);
+  const [remainingChances, setRemainingChances] = useState(7);
   const [hookCount, setHookCount] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
@@ -174,11 +174,11 @@ const Fishing = () => {
   };
 
   const catchElement = () => {
-    if (hookCount < 10) {
+    if (hookCount < 7) {
       setHookCount(hookCount + 1);
       setRemainingChances(remainingChances - 1);
     }
-    if (hookCount === 9) {
+    if (hookCount === 6) {
       setGameOver(true);
     }
     
@@ -313,8 +313,9 @@ const Fishing = () => {
         <p> {remainingChances} chances left</p > */}
         <button className={style.hookbutton} onClick={handleHook} disabled={gameOver}>
         {buttonText}
+        <p>{remainingChances} chances left</p >
       </button>
-      <p>{remainingChances} chances left</p >
+      
       {/* {gameOverText} */}
         
         <div

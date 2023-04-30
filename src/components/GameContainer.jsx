@@ -15,7 +15,7 @@ const GameContainer = () => {
           src="/image1@2x.png"
         /> */}
       <button
-        className="bottom-0 left-2/4 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-4 py-2 absolute z-50"
+        className="bottom-0 left-2/4 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-8 py-5 absolute z-50"
         onClick={onClick}
       >
         Play Now
