@@ -33,14 +33,14 @@ const Header = () => {
           href="/identification"
           className="relative leading-[155.5%] inline-block w-[10.56rem] h-[1.81rem] shrink-0 no-underline hover:bg-goldenrod"
         >
-          Friend Identification
+          Identification
         </a>
-        <a
+        {/* <a
           href="/"
           className="relative leading-[155.5%] inline-block w-[12.56rem] h-[1.81rem] shrink-0 no-underline hover:bg-goldenrod"
         >
           Ocean Facts
-        </a>
+        </a> */}
       </div>
     </div>
   );

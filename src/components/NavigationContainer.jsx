@@ -121,7 +121,7 @@ const Navigation = ({
             Events
           </div> */}
 
-          <a href="/story">
+          {/* <a href="/story">
             <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
               About
             </div>
@@ -130,7 +130,7 @@ const Navigation = ({
             <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
               Events
             </div>
-          </a>
+          </a> */}
           <a href="/story">
             <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
               Ocean Story

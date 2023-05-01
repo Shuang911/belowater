@@ -1,79 +1,84 @@
-import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import InputContainer from "../components/InputContainer";
 import BelugaContainer from "../components/BelugaContainer";
 import ContainerFooter from "../components/ContainerFooter";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
+import * as tf from "@tensorflow/tfjs";
 import Header from "../components/Header";
-//import * as mobilenet from "@tensorflow-models/mobilenet";
+import * as mobilenet from "@tensorflow-models/mobilenet";
+
 const Identification = () => {
-    const navigate = useNavigate();
-    const [isModelLoading, setIsModelLoading] = useState(false)
-    const [model, setModel] = useState(null)
-    const [imageURL, setImageURL] = useState(null);
-    const [results, setResults] = useState([])
-    const [history, setHistory] = useState([])
+  const navigate = useNavigate();
+  const [isModelLoading, setIsModelLoading] = useState(false);
+  const [model, setModel] = useState(null);
+  const [imageURL, setImageURL] = useState(null);
+  const [results, setResults] = useState([]);
+  const [history, setHistory] = useState([]);
 
-    const imageRef = useRef()
-    const textInputRef = useRef()
-    const fileInputRef = useRef()
+  const imageRef = useRef();
+  const inputRef = useRef();
 
-    const loadModel = async () => {
-        setIsModelLoading(true)
-        try {
-            const model = await mobilenet.load()
-            setModel(model)
-            setIsModelLoading(false)
-        } catch (error) {
-            console.log(error)
-            setIsModelLoading(false)
-        }
+  const fileInputRef = useRef();
+
+  const loadModel = async () => {
+    setIsModelLoading(true);
+    try {
+      const model = await mobilenet.load();
+      setModel(model);
+      setIsModelLoading(false);
+    } catch (error) {
+      console.log(error);
+      setIsModelLoading(false);
     }
+  };
 
-    const uploadImage = (e) => {
-        const { files } = e.target
-        if (files.length > 0) {
-            const url = URL.createObjectURL(files[0])
-            setImageURL(url)
-        } else {
-            setImageURL(null)
-        }
+  const uploadImage = (e) => {
+    const { files } = e.target;
+    if (files.length > 0) {
+      const url = URL.createObjectURL(files[0]);
+      setImageURL(url);
+    } else {
+      setImageURL(null);
     }
+  };
 
-    const identify = async () => {
-        textInputRef.current.value = ''
-        const results = await model.classify(imageRef.current)
-        setResults(results)
+  const identify = async () => {
+    // textInputRef.current.value = ''
+    // const results = await model.classify(imageRef.current)
+    // setResults(results)
+    if (model && imageRef.current) {
+      const results = await model.classify(imageRef.current);
+      setResults(results);
+      console.log(results);
+      
+    } else {
+      console.log("model or Image not defined");
     }
+  };
 
-    const handleOnChange = (e) => {
-        setImageURL(e.target.value)
-        setResults([])
+  const handleOnChange = (e) => {
+    setImageURL(e.target.value);
+    setResults([]);
+  };
+
+  const triggerUpload = () => {
+    fileInputRef.current.click();
+  };
+
+  useEffect(() => {
+    loadModel();
+  }, []);
+
+  useEffect(() => {
+    if (imageURL) {
+      setHistory([imageURL, ...history]);
     }
+  }, [imageURL]);
 
-    const triggerUpload = () => {
-        fileInputRef.current.click()
-    }
-
-    useEffect(() => {
-        loadModel()
-    }, [])
-
-    useEffect(() => {
-        if (imageURL) {
-            setHistory([imageURL, ...history])
-        }
-    }, [imageURL])
-
-    if (isModelLoading) {
-        return <h2> Model Loading...</h2>
-    }
+  if (!isModelLoading) {
+    console.log("1");
+  }
 
   //const navigate = useNavigate();
-
-  const onFAQsTextClick = useCallback(() => {
-    navigate("/events");
-  }, [navigate]);
 
   return (
     <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0rem] box-border items-center justify-center gap-[3.13rem] text-center text-[1.75rem] text-indigo_900 font-abyssinica-sil">
@@ -108,16 +113,74 @@ const Identification = () => {
         <div className="absolute h-[7.09%] w-[25.25%] top-[59.54%] right-[45.64%] bottom-[33.37%] left-[29.11%] rounded-3xs">
           <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] overflow-hidden">
             <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-colors-action-color-1" />
-            <b className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_24.5px)] tracking-[-0.3px] leading-[1.5rem]">
+            <b
+              className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_24.5px)] tracking-[-0.3px] leading-[1.5rem]"
+              onClick={identify}
+            >
               Submit
             </b>
           </div>
         </div>
-       
-        <InputContainer />
-        <BelugaContainer />
-        <div className="absolute top-[0.02rem] left-[40.94rem] w-[28.44rem] h-[9.75rem] text-dimgray font-catamaran">
+
+        <div
+          className="absolute top-[0rem] left-[0.03rem] w-[37.81rem] h-[23.13rem] text-center text-[0.88rem] text-dimgray font-catamaran"
+          onClick={() => inputRef.current.click()}
+        >
+          <b className="absolute top-[0.3rem] left-[1.38rem] tracking-[-0.3px] leading-[1.5rem] inline-block w-[2.88rem] h-[1.28rem]">
+            Input
+          </b>
           <img
+            className="absolute top-[0rem] left-[0rem] rounded-3xs w-[4.97rem] h-[1.98rem]"
+            alt=""
+            src="/vector-19.svg"
+          />
+          <img
+            className="absolute h-[6.49%] w-[3.97%] top-[2.41%] right-[3.14%] bottom-[91.1%] left-[92.89%] rounded-3xs max-w-full overflow-hidden max-h-full"
+            alt=""
+            src="/iconspaper-fail.svg"
+          />
+          <img
+            className="absolute h-[5.26%] w-[3.14%] top-[1.56%] right-[95.37%] bottom-[93.18%] left-[1.49%] rounded-3xs max-w-full overflow-hidden max-h-full"
+            alt=""
+            src="/iconsimage.svg"
+          />
+          <div className="absolute h-[100.57%] w-[100.5%] top-[-0.16%] right-[-0.25%] bottom-[-0.41%] left-[-0.25%] rounded-3xs bg-darkgray box-border opacity-[0.1] mix-blend-normal border-[3px] border-solid border-black" />
+          <img
+            className="absolute h-[100.57%] w-[100.5%] top-[-0.16%] right-[-0.25%] rounded-3xs object-cover"
+            alt=""
+            src={imageURL}
+            crossOrigin="anonymous"
+            ref={imageRef}
+            width="auto"
+            height="auto"
+          />
+          <img
+            className="absolute h-[6.32%] w-[3.97%] top-[2.41%] right-[8.1%] bottom-[91.27%] left-[87.93%] rounded-3xs max-w-full overflow-hidden max-h-full"
+            alt=""
+            src="/iconsedit-square.svg"
+          />
+          <input
+            type="file"
+            accept="image/*"
+            capture="camera"
+            hidden
+            ref={inputRef}
+            onChange={(e) => {
+              const file = e.target.files[0];
+              if (file) {
+                const url = URL.createObjectURL(file);
+                setImageURL(url);
+              }
+            }}
+          />
+        </div>
+        <BelugaContainer
+          className="absolute top-[1rem] left-[40.94rem] w-[28.44rem] h-[9.75rem] text-dimgray font-catamaran"
+          stats={results}
+        />
+
+        {/* <div className="absolute top-[0.02rem] left-[40.94rem] w-[28.44rem] h-[9.75rem] text-dimgray font-catamaran"> */}
+        {/* <img
             className="absolute top-[0.11rem] left-[0.22rem] rounded-3xs w-[15.28rem] h-[2.03rem]"
             alt=""
             src="/vector-181.svg"
@@ -130,8 +193,8 @@ const Identification = () => {
             className="absolute h-[15.38%] w-[5.27%] top-[3.64%] right-[91.32%] bottom-[80.97%] left-[3.41%] rounded-3xs max-w-full overflow-hidden max-h-full"
             alt=""
             src="/iconsmore.svg"
-          />
-        </div>
+          /> */}
+        {/* </div> */}
         <div className="absolute top-[34.52rem] left-[0rem] w-[63.5rem] h-[7.81rem]">
           <div className="absolute top-[0rem] left-[1.13rem] w-[43.13rem] h-[7.81rem] flex flex-row items-start justify-start gap-[1.63rem]">
             <img
