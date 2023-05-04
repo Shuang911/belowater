@@ -56,16 +56,19 @@ const CertificatePage = () => {
           <b className={styles.certificateOfOcean}>
             Certificate of Ocean Friendship
           </b>
-          <div className={styles.malletTheShark}>Kiyomi</div>
+          {/* <div className={styles.malletTheShark}>Kiyomi</div> */}
         </div>
         <div className={styles.thisCertificateIsContainer}>
           <p className={styles.thisCertificateIs}>
-            This certificate is Awarded to ..................
-            .................  For being a treasured friend to the ocean.
+            {/* This certificate is Awarded to ..................
+            .................  For being a treasured friend to the ocean. */}
+                        This certificate is Awarded 
+             for being a treasured friend to the ocean.
           </p>
           <p className={styles.thisCertificateIs}>&nbsp;</p>
           <p className={styles.signedDa}>
-            Signed ....Kiyomi............ Date:.............
+            {/* Signed ....Kiyomi............ Date:............. */}
+            {/* Signed ....Kiyomi............  */}
           </p>
         </div>
       </div>

@@ -8,8 +8,8 @@ import succes from "./success_icon_194168.png";
 const rows = 3;
 const columns = 3;
 
-// const imgOrder = ["1", "3", "2", "4", "5", "6", "7", "8", "9"];
-const imgOrder = ["1", "3", "2", "7", "9", "5", "4", "6", "8"];
+const imgOrder = ["1", "3", "2", "4", "5", "6", "7", "8", "9"];
+// const imgOrder = ["1", "3", "2", "7", "9", "5", "4", "6", "8"];
 
 const Puzzle = () => {
   const [turns, setTurns] = useState(0);
@@ -136,7 +136,7 @@ const Puzzle = () => {
         <br></br>
         <p className={style.turns}>Turns: {turns}</p>
         {isSolved && (
-          <div>
+          <div className={style.certP}>
             <br></br>
             {/* <p className={style.suc}>Success!</p>
           <img src={succes} alt=""></img> */}
