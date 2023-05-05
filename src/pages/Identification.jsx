@@ -31,33 +31,38 @@ const Identification = () => {
     }
   };
 
-  const uploadImage = (e) => {
-    const { files } = e.target;
-    if (files.length > 0) {
-      const url = URL.createObjectURL(files[0]);
-      setImageURL(url);
-    } else {
-      setImageURL(null);
-    }
-  };
+  // const uploadImage = (e) => {
+  //   const { files } = e.target;
+  //   if (files.length > 0) {
+  //     const url = URL.createObjectURL(files[0]);
+  //     setImageURL(url);
+  //   } else {
+  //     setImageURL(null);
+  //   }
+  // };
 
   const identify = async () => {
-    // textInputRef.current.value = ''
-    // const results = await model.classify(imageRef.current)
-    // setResults(results)
-    if (model && imageRef.current) {
+    if (!imageRef.current) {
+      console.log("No image uploaded");
+      return;
+    }
+
+    if (model) {
       const results = await model.classify(imageRef.current);
       setResults(results);
       console.log(results);
-      
     } else {
-      console.log("model or Image not defined");
+      console.log("Model not defined");
     }
   };
 
   const handleOnChange = (e) => {
     setImageURL(e.target.value);
     setResults([]);
+  };
+
+  const handleClearFile = () => {
+    setImageURL(null);
   };
 
   const triggerUpload = () => {
@@ -103,20 +108,23 @@ const Identification = () => {
       </div>
       <div className="relative w-[69.56rem] h-[42.33rem] shrink-0 text-[0.88rem] text-colors-basic-color-1 font-display-03">
         <div className="absolute h-[7.09%] w-[25.25%] top-[59.54%] right-[74.75%] bottom-[33.37%] left-[0%]">
-          <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] overflow-hidden">
-            <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-antiquewhite" />
+          <div
+            className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] overflow-hidden"
+            onClick={handleClearFile}
+          >
+            <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-antiquewhite hover:bg-gray-300 cursor-pointer" />
             <b className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_17.5px)] tracking-[-0.3px] leading-[1.5rem]">
               Clear
             </b>
           </div>
         </div>
         <div className="absolute h-[7.09%] w-[25.25%] top-[59.54%] right-[45.64%] bottom-[33.37%] left-[29.11%] rounded-3xs">
-          <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] overflow-hidden">
-            <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-colors-action-color-1" />
-            <b
-              className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_24.5px)] tracking-[-0.3px] leading-[1.5rem]"
-              onClick={identify}
-            >
+          <div
+            className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] overflow-hidden"
+            onClick={identify}
+          >
+            <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-colors-action-color-1 hover:bg-gray-300 cursor-pointer" />
+            <b className="absolute top-[calc(50%_-_12px)] left-[calc(50%_-_24.5px)] tracking-[-0.3px] leading-[1.5rem]">
               Submit
             </b>
           </div>
@@ -126,24 +134,24 @@ const Identification = () => {
           className="absolute top-[0rem] left-[0.03rem] w-[37.81rem] h-[23.13rem] text-center text-[0.88rem] text-dimgray font-catamaran"
           onClick={() => inputRef.current.click()}
         >
-          <b className="absolute top-[0.3rem] left-[1.38rem] tracking-[-0.3px] leading-[1.5rem] inline-block w-[2.88rem] h-[1.28rem]">
-            Input
+          <b className="absolute top-[10rem] left-[17rem] tracking-[-0.3px] leading-[1.5rem] inline-block w-[2.88rem] h-[1.28rem]">
+            Click to Upload
           </b>
-          <img
+          {/* <img
             className="absolute top-[0rem] left-[0rem] rounded-3xs w-[4.97rem] h-[1.98rem]"
             alt=""
             src="/vector-19.svg"
-          />
-          <img
+          /> */}
+          {/* <img
             className="absolute h-[6.49%] w-[3.97%] top-[2.41%] right-[3.14%] bottom-[91.1%] left-[92.89%] rounded-3xs max-w-full overflow-hidden max-h-full"
             alt=""
             src="/iconspaper-fail.svg"
-          />
-          <img
+          /> */}
+          {/* <img
             className="absolute h-[5.26%] w-[3.14%] top-[1.56%] right-[95.37%] bottom-[93.18%] left-[1.49%] rounded-3xs max-w-full overflow-hidden max-h-full"
             alt=""
             src="/iconsimage.svg"
-          />
+          /> */}
           <div className="absolute h-[100.57%] w-[100.5%] top-[-0.16%] right-[-0.25%] bottom-[-0.41%] left-[-0.25%] rounded-3xs bg-darkgray box-border opacity-[0.1] mix-blend-normal border-[3px] border-solid border-black" />
           <img
             className="absolute h-[100.57%] w-[100.5%] top-[-0.16%] right-[-0.25%] rounded-3xs object-cover"
@@ -154,11 +162,12 @@ const Identification = () => {
             width="auto"
             height="auto"
           />
-          <img
+
+          {/* <img
             className="absolute h-[6.32%] w-[3.97%] top-[2.41%] right-[8.1%] bottom-[91.27%] left-[87.93%] rounded-3xs max-w-full overflow-hidden max-h-full"
             alt=""
             src="/iconsedit-square.svg"
-          />
+          /> */}
           <input
             type="file"
             accept="image/*"
@@ -170,6 +179,8 @@ const Identification = () => {
               if (file) {
                 const url = URL.createObjectURL(file);
                 setImageURL(url);
+              } else {
+                setImageURL(null);
               }
             }}
           />

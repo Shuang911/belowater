@@ -19,19 +19,19 @@ const Header = () => {
         </a>
         <a
           href="/game"
-          className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.75rem] shrink-0 no-underline hover:bg-goldenrod"
+          className="relative leading-[155.5%] inline-block w-[7.38rem] h-[1.75rem] shrink-0 no-underline hover:bg-goldenrod cursor-pointer"
         >
           Ocean Helper
         </a>
         <a
           href="/quiz"
-          className="relative leading-[155.5%] inline-block w-[9.88rem] h-[1.81rem] shrink-0 no-underline hover:bg-goldenrod"
+          className="relative leading-[155.5%] inline-block w-[9.88rem] h-[1.81rem] shrink-0 no-underline hover:bg-goldenrod cursor-pointer"
         >
           Ocean Friend Quiz
         </a>
         <a
           href="/identification"
-          className="relative leading-[155.5%] inline-block w-[10.56rem] h-[1.81rem] shrink-0 no-underline hover:bg-goldenrod"
+          className="relative leading-[155.5%] inline-block w-[10.56rem] h-[1.81rem] shrink-0 no-underline hover:bg-goldenrod cursor-pointer"
         >
           Identification
         </a>
