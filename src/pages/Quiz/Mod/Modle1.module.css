@@ -1,0 +1,12 @@
+.app {
+    /* background-color: #f5eded; */
+    background-color: rgb(1, 10, 22);
+    /* width: 1050px; */
+    /* width:1448px; */
+    width: 450px;
+    height: 450px;
+    border-radius: 15px;
+    /* padding: 50px; */
+    color: #b0b1ed;
+    margin: 0 auto;
+  }

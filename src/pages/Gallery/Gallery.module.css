@@ -1,0 +1,115 @@
+.container1{
+    width: 70%;
+    min-height: 110vh;
+    position: relative;
+    margin: 0 auto;
+}
+
+.container1 h2{
+    color: #0331b9ae;
+    /* color: #0733b6ae; */
+    text-align: center;
+    padding: 1px;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.container1 .mediaContainer1{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+    gap:5rem;
+    margin:1rem auto;
+}
+
+.container1 .mediaContainer1 .media{
+    height:100%;
+    width: 100%;
+    border:10px solid #f6f6f8;
+    box-shadow: 10px 15px 15px  rgba(0, 0, 0, 0.7);
+    overflow:hidden;
+    cursor:pointer;
+}
+
+
+.container1 .mediaContainer1 .media :is(video,img){
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s linear;
+}
+
+.container1 .mediaContainer1 .media:hover :is(video,img){
+    transform: scale(1.1);
+}
+
+.container1 .popUp{
+   /* position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 100;
+   background-color: rgba(0, 0, 0, 0.7);
+   width: 100%;
+   height: 100%; */
+   top: 0;
+   left: 0;
+   z-index: 100;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color:rgba(3, 10, 33, 0.5);
+   
+}
+
+.container1 .popUp :is(video,img){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border: 3px solid #fff;
+    
+}
+
+.container1 .popUp span{
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+    font-size: 5rem;
+    font-weight: bolder;
+    z-index: 100;
+    cursor: pointer;
+    color: #f90606;
+    user-select: none;
+}
+
+
+.picText{
+    /* margin-top: 5%; */
+    font-size: 3.5rem;
+    color: #f5f4f7;
+    margin: 2rem auto;
+}
+
+
+.button1{
+    width: 250px;
+  padding: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  /* background-color: #0b7dda;
+  color: white; */
+  background-color: #5ab0f6;
+  color: #e8e8f5;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  margin: 2rem auto;
+}
+
+.button1:focus{
+    background-color: #5540db;
+}

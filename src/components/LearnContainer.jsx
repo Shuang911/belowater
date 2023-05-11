@@ -82,9 +82,9 @@ const LearnContainer = () => {
           Friend identification
           </button>
         </a>
-        <a href="/">
+        <a href="/gallery">
           <button className="px-8 py-4 bg-purple-600 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
-          Ocean Facts
+          Gallery
           </button>
         </a>
       </div>

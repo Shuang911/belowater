@@ -17,6 +17,12 @@ import Puzzle from "./pages/Quiz/Ques/Puzzle";
 import Quiz3 from "./pages/Quiz/Ques/Quiz3";
 import Identification from "./pages/Identification";
 import { useEffect } from "react";
+import Gallery from "./pages/Gallery/Gallery"
+import Plastic from "./pages/Facts/Plastic";
+import Mining from "./pages/Facts/Mining";
+import Climate from "./pages/Facts/Climate";
+import Overfish from "./pages/Facts/Overfish";
+
 
 function App() {
   const action = useNavigationType();
@@ -70,6 +76,27 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+
+        case "/gallery":
+          title = "";
+          metaDescription = "";
+          break;
+         case "/plastic":
+          title = "";
+          metaDescription = "";
+          break;
+          case "/mining":
+          title = "";
+          metaDescription = "";
+          break;
+          case "/climate":
+          title = "";
+          metaDescription = "";
+          break;
+          case "/overfish":
+          title = "";
+          metaDescription = "";
+          break;
     }
 
     if (title) {
@@ -103,6 +130,12 @@ function App() {
       <Route path="/puzzle" element={<Puzzle />} />
       <Route path="/identification" element={<Identification />} />
       <Route path="/map" element={<Map />} />
+
+      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/plastic" element={<Plastic />} />
+      <Route path="/mining" element={<Mining />} />
+      <Route path="/climate" element={<Climate />} />
+      <Route path="/overfish" element={<Overfish />} />
     </Routes>
   );
 }

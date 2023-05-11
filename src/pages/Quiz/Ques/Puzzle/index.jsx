@@ -1,21 +1,29 @@
 import { useState } from "react";
 import style from "./index.module.css";
+import styles from "../Certificate.module.css";
 import Header from "../../../../components/Header";
 import NavigationContainer from "../../../../components/NavigationContainer";
 import CertificatePage from "../CertificatePage";
 import succes from "./success_icon_194168.png";
+import Modle1 from "../../Mod/Modle1"
 
 const rows = 3;
 const columns = 3;
 
-const imgOrder = ["1", "3", "2", "4", "5", "6", "7", "8", "9"];
-// const imgOrder = ["1", "3", "2", "7", "9", "5", "4", "6", "8"];
+// const imgOrder = ["1", "3", "2", "4", "5", "6", "7", "8", "9"];
+const imgOrder = ["1", "3", "2", "7", "9", "5", "4", "6", "8"];
 
 const Puzzle = () => {
   const [turns, setTurns] = useState(0);
   const [otherTile, setOtherTile] = useState(null);
   const [currTile, setCurrTile] = useState(null);
   const [ImgOrder, setImgOrder] = useState(imgOrder);
+
+  function handleClick() {
+    window.location.href = "/Quiz"; 
+  }
+
+  
 
   const dragStart = (e) => {
     setCurrTile(e.target);
@@ -92,59 +100,66 @@ const Puzzle = () => {
   const isSolved = imgOrder.join("") === "123456789";
   // console.log("isSolved",isSolved,"123456789");
 
+  
+   
   return (
-    <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
+    <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[0.01rem] text-center text-[1.75rem] text-indigo_900 font-catamaran">
       <Header />
-      <div>
-        <div className={style.board}>
-          <p>
-            Welcome to our puzzle game ! Piece together a cute seal lounging on
-            the beach, let's see how many turns you need !
-          </p>
-
-          {[...Array(rows * columns)].map((_, i) => {
-            const r = Math.floor(i / columns);
-            const c = i % columns;
-
-            const src = `./${imgOrder[i]}.jpg`;
-
-            return (
-              <img
-                key={`${r}-${c}`}
-                id={`${r}-${c}`}
-                src={src}
-                // onError={() => console.log("Failed to load image")}
-
-                // src={require(`./image/${imgOrder[i]}.jpg`)}
-                // onLoad={() => console.log(src)}
-
-                draggable="true"
-                onDragStart={dragStart}
-                onDragOver={dragOver}
-                onDragEnter={dragEnter}
-                onDragLeave={dragLeave}
-                onDrop={dragDrop}
-                onDragEnd={dragEnd}
-              />
-            );
-          })}
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <p className={style.turns}>Turns: {turns}</p>
-        {isSolved && (
-          <div className={style.certP}>
-            <br></br>
-            {/* <p className={style.suc}>Success!</p>
-          <img src={succes} alt=""></img> */}
-            <br></br>
-            <CertificatePage />
+      {/* <br></br> */}
+      {!isSolved ? 
+      (
+        <div>
+          <p className={style.turns}>
+          Who is trapped by the fishing net, complete the puzzle and help him ...</p>
+          {/* <p className={style.turns2}>Turns:{turns}</p> */}
+          <div className={style.board}>
+              {
+                [...Array(rows * columns)].map
+                  ((_, i) => 
+                    {
+                      const r = Math.floor(i / columns);
+                      const c = i % columns;
+                      const src = `./${imgOrder[i]}.jpg`;
+                      return (
+                        <img
+                          key={`${r}-${c}`}
+                          id={`${r}-${c}`}
+                          src={src}
+                          draggable="true"
+                          onDragStart={dragStart}
+                          onDragOver={dragOver}
+                          onDragEnter={dragEnter}
+                          onDragLeave={dragLeave}
+                          onDrop={dragDrop}
+                          onDragEnd={dragEnd}
+                        />
+                      );
+                    }
+                  )
+              }
           </div>
-        )}
-      </div>
+                    
+        </div> 
+      ) 
+      :  
+       
+        (
+          <>
+            <p className={style.turns}>
+             Thank you for helping me! Here is the 3D model to know me more!</p>
+            
+            {/* <div className={style.certP}> */}
+              {/* <CertificatePage /> */}
+            <Modle1 />
+            <button className={styles.hookbutton1} onClick={handleClick}>Back</button>
+            {/* </div> */}
+          </>
+        )
+      
+      }
+        
+      <br></br>
+     
       <NavigationContainer
         dimensionsText="/vector-11.svg"
         dimensionsText2="/path2.svg"
@@ -164,7 +179,7 @@ const Puzzle = () => {
         //onFAQsTextClick={onFAQsTextClick}
       />
     </div>
-  );
+  );    
 };
 
 export default Puzzle;

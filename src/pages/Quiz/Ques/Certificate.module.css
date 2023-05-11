@@ -5,12 +5,14 @@
 }
 
 .lo{
-  display: block;
-  margin: auto;
+  /* display: block; */
+  /* margin: auto;
   position: absolute;
   top: 10%;
-  left: 18%;
+  left: 18%; */
   /* transform: translate(-50%, -50%); */
+
+  margin: 0 auto;
 }
 
 .quizQuestion2CorrectAnswerChild {

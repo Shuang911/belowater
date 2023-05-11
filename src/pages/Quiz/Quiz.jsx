@@ -26,7 +26,7 @@ const Quiz1 = () => {
           <img
             className="absolute top-[0rem] left-[0rem] rounded-31xl w-[71.88rem] h-[20.75rem] object-cover"
             alt=""
-            src="/image@2x.png"
+            src="/quizIndex.png"
           />
           <img
             className="absolute top-[10.75rem] left-[1.39rem] rounded-31xl w-[19.36rem] h-[8.67rem] object-cover"
@@ -38,7 +38,7 @@ const Quiz1 = () => {
               Ocean Friend Quiz
             </div>
             <div className="absolute h-[41.95%] top-[78.26%] left-[calc(54%_-_312.7px)] text-[1.06rem] leading-[1.63rem] font-medium font-montserrat text-purple inline-block w-[28.63rem]">
-              Test your knowledge on what you know about our ocean friends!
+              Test your knowledge on what you know about ocean and solve problems for ocean friends
             </div>
             
           </div>

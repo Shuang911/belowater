@@ -15,10 +15,14 @@ app {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+  /* align-items: center;
   height: 580px;
-  width: 640px;
-  background: url("./images/meetMallte.jpeg") no-repeat center / contain;
+  width: 640px; */
+  align-items: flex-end;
+  height: 80vh;
+  width: 70rem;
+  
+  background: url("./images/page1.png") no-repeat center / cover;
 }
 
 .startPage3 {
@@ -28,7 +32,7 @@ app {
   justify-content: flex-end;
   align-items: flex-end;
   height: 80vh;
-  width: 60rem;
+  width: 70rem;
   background: url("./images3/meet-Delfina.jpeg") no-repeat center / cover;
 }
 
@@ -49,13 +53,13 @@ app {
 }
 
 .startPageText2 {
-  color: #ddeaf5;
+  color: rgb(232, 170, 27);
   position: absolute;
   right: 15px;
   bottom: 45px;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
-  border-bottom: 4px solid rgb(246, 244, 244);
+  border-bottom: 4px solid  rgb(232, 170, 27);
 }
 
 .startBtn {
@@ -68,13 +72,14 @@ app {
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
+  margin:0 auto;
 }
 
-.rightBottom {
+/* .rightBottom {
   margin-top: auto;
   margin-left: auto;
   margin-bottom: 0.2rem;
-}
+} */
 
 .startBtn:hover {
   background-color: #3b9cec;
@@ -106,7 +111,7 @@ app {
 .questionsection {
   font-size: 3rem;
   background-color: #d9d9d9;
-  width: 40%;
+  width: 40rem;
   height: auto;
   border-radius: 25px;
   margin: 7rem auto auto 5rem;
@@ -466,4 +471,26 @@ app {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   text-align: center;
+}
+
+
+.end1{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 80vh;
+  width: 70rem;
+  background: url("./images1/end1.jpeg") no-repeat center / cover;
+}
+
+.end1Text {
+  color: rgb(213, 234, 56);
+  position: absolute;
+  right: 15px;
+  top: 4px;
+  font-size: 2rem;
+  font-weight: 800;
+  /* border-bottom: 4px solid  rgb(232, 170, 27); */
 }

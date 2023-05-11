@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./index.module.css";
+import styles from "./Certificate.module.css";
 import CertificatePage from "./CertificatePage";
 import Header from "../../../components/Header";
 import NavigationContainer from "../../../components/NavigationContainer";
@@ -178,6 +179,10 @@ export default function Quiz1() {
     setGameStarted(true);
   };
 
+  function handleClick() {
+    window.location.href = "/Quiz"; 
+  }
+
   const handleAnswerButtonClick1 = (isCorrect) => {
     // if (!clickedAnswers.includes(currentQuestion)) {
     // 	setClickedAnswers([...clickedAnswers, currentQuestion]);
@@ -253,7 +258,7 @@ export default function Quiz1() {
     return (
       <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
         <Header />
-        <div className={style.startPage3}>
+        <div className={style.startPage3} >
           {/* <h1 className={style.startPageText1}>Test your knowledge of marine lifes!</h1> */}
           <h2 className={style.startPageText2}> Meet Delfina</h2>
           {/* <button onClick={startGame} className={`${style.startBtn} ${style.rightBottom}`}>Start</button> */}
@@ -356,13 +361,15 @@ export default function Quiz1() {
           <img src={img3} alt="" className={style.answerImg} />
 
           <div>
-            {!showCertificate ? (
+            {/* {!showCertificate ? (
               <button className={style.hookbutton1} onClick={handleButtonClick}>
                 Click here to print your certificate
               </button>
             ) : (
               <CertificatePage />
-            )}
+            )} */}
+             <button className={styles.hookbutton1} onClick={handleClick}>Back</button>
+
           </div>
           <br></br>
             <br></br>
