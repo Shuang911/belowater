@@ -3,8 +3,12 @@ import { useNavigate } from "react-router-dom";
 import NavigationContainer from "../../components/NavigationContainer";
 // import Map from "./Map";
 import Header from "../../components/Header";
+import styles from "../Quiz/Ques/Certificate.module.css";
 
 const Overfish = () => {
+  function handleClick() {
+    window.location.href = "/Gallery";
+  }
     return (
         <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] h-[150rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran" >
       <Header />
@@ -107,6 +111,9 @@ const Overfish = () => {
             {/* <p className="m-0">
               • Research the companies that you or your parents use, encourage them to reduce their carbon footprint.
             </p> */}
+            <button className={styles.hookbutton1} onClick={handleClick}>
+              Back to Gallery
+            </button>
           </div>
         </div>
         

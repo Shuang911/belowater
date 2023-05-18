@@ -3,8 +3,12 @@ import { useNavigate } from "react-router-dom";
 import NavigationContainer from "../../components/NavigationContainer";
 // import Map from "./Map";
 import Header from "../../components/Header";
+import styles from "../Quiz/Ques/Certificate.module.css";
 
 const Mining = () => {
+  function handleClick() {
+    window.location.href = "/Gallery";
+  }
     return (
         <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] h-[150rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran" >
       <Header />
@@ -104,7 +108,9 @@ const Mining = () => {
               In recent years, increasing requirements for valuable metals and materials have led towards a larger focus for examining and harvesting materials from the ocean floor.  We need to make sure that the risks of each new mine are known and the benefits weighed very carefully against them.
               </b>
             </p>
-            
+            <button className={styles.hookbutton1} onClick={handleClick}>
+              Back to Gallery
+            </button>
           </div>
         </div>
         
