@@ -127,7 +127,7 @@ const Home = () => {
         />
         <div className="absolute top-[4.62rem] left-[5.19rem] leading-[2.5rem] flex items-center w-[14.63rem] h-[9.75rem] text-white">
           <span className="[line-break:anywhere] w-full">
-          <a href="/" className="text-white">
+          <a href="/plastic" className="text-white">
             <p className="m-0 [text-decoration:underline]">Ocean facts</p>
           </a>
             <p className="m-0 text-[1rem] text-snow">

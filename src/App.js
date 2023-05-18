@@ -22,6 +22,8 @@ import Plastic from "./pages/Facts/Plastic";
 import Mining from "./pages/Facts/Mining";
 import Climate from "./pages/Facts/Climate";
 import Overfish from "./pages/Facts/Overfish";
+import ReIdentification from "./pages/Reidentification";
+import AnIdentification from "./pages/AnIdentification";
 
 
 function App() {
@@ -136,6 +138,8 @@ function App() {
       <Route path="/mining" element={<Mining />} />
       <Route path="/climate" element={<Climate />} />
       <Route path="/overfish" element={<Overfish />} />
+      <Route path="/recycle" element={<ReIdentification />} />
+      <Route path="/animal" element={<AnIdentification />} />
     </Routes>
   );
 }

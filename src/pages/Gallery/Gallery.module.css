@@ -113,3 +113,9 @@
 .button1:focus{
     background-color: #5540db;
 }
+
+.refe{
+    font-size: 1rem;
+    text-align: left;
+    /* margin-right: 20rem; */
+}

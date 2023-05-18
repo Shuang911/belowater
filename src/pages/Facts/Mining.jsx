@@ -72,7 +72,7 @@ const Mining = () => {
           <img
             className="absolute h-[42.94%] w-[32.24%] top-[5.79%] right-[54.4%] bottom-[61.27%] left-[13.36%] max-w-full overflow-hidden max-h-full object-contain"
             alt=""
-            src="/Mining.png"
+            src="/mining.png"
           />
           <b className="absolute h-[8.13%] w-[32.23%] top-[7.28%] left-[51.44%] tracking-[-1.6px] leading-[2.88rem] inline-block">{`Mining `}</b>
           <div className="absolute w-[32.23%] top-[calc(50%_-_682.5px)] left-[51.44%] text-[1rem] tracking-[-0.36px] leading-[1.63rem] text-colors-basic-color-2 inline-block h-[55.93rem]">
