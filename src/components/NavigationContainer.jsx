@@ -131,11 +131,11 @@ const Navigation = ({
               Events
             </div>
           </a> */}
-          <a href="/story">
+          {/* <a href="/story">
             <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
               Ocean Story
             </div>
-          </a>
+          </a> */}
           <a href="/game">
             <div className="relative leading-[1.25rem] font-semibold inline-block w-[7.62rem] text-white">
               Ocean Game

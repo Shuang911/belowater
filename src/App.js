@@ -130,7 +130,7 @@ function App() {
       <Route path="/quiz2" element={<Quiz1 />} />
       <Route path="/quiz3" element={<Quiz3 />} />
       <Route path="/puzzle" element={<Puzzle />} />
-      <Route path="/identification" element={<Identification />} />
+      {/* <Route path="/identification" element={<Identification />} /> */}
       <Route path="/map" element={<Map />} />
 
       <Route path="/gallery" element={<Gallery />} />
@@ -139,7 +139,7 @@ function App() {
       <Route path="/climate" element={<Climate />} />
       <Route path="/overfish" element={<Overfish />} />
       <Route path="/recycle" element={<ReIdentification />} />
-      <Route path="/animal" element={<AnIdentification />} />
+      <Route path="/identification" element={<AnIdentification />} />
     </Routes>
   );
 }

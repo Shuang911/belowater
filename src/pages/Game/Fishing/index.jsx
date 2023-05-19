@@ -93,7 +93,7 @@ const getRandomPlasticsData = (data, num) => {
     const item = createElementData({
       type: "plastic",
       size: plasticSize,
-      image: plastic.plastics_image,
+      image: plastic.plastics_img,
       data: plastic,
     });
 

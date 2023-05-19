@@ -25,7 +25,7 @@ const PlayContainer = () => {
             alt=""
             src="/icon1.svg"
           />
-          
+
           <div className="absolute top-[8.36rem] left-[calc(50%_-_130.23px)] w-[16.34rem] h-[11.24rem] overflow-hidden">
             <a href="/quiz2" className="text-purple hover:bg-red-600">
               <div className="absolute h-[53.37%] top-[42.33%] left-[calc(50%_-_132.68px)] leading-[1.63rem] inline-block w-[16.63rem]">
@@ -39,7 +39,7 @@ const PlayContainer = () => {
 
         <a href="/quiz3" className="text-purple hover:bg-red-600">
           <div className="absolute h-[26.62%] top-[58.25%] left-[calc(50%_-_132.5px)] leading-[1.63rem] inline-block w-[16.63rem]">
-          Marine Friend
+           Marine Friends
           </div>
         </a>
 
@@ -69,7 +69,7 @@ const PlayContainer = () => {
         </div>
         <a href="/puzzle" className="text-purple hover:bg-red-600">
           <div className="absolute h-[26.62%] top-[58.25%] left-[calc(50%_+_206.5px)] leading-[1.63rem] inline-block w-[16.63rem]">
-          Puzzle
+            Marine Puzzle
           </div>
         </a>
       </div>

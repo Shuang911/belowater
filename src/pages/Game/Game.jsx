@@ -12,7 +12,7 @@ const Game = () => {
 
   return (
     <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
-          <Header />
+      <Header />
       <GameContainer />
       <div className="relative w-[71.88rem] h-[33.18rem] shrink-0 text-[2.81rem]">
         <div className="absolute top-[7.33rem] left-[0rem] w-[26.35rem] h-[22.77rem] overflow-hidden">
@@ -61,7 +61,7 @@ const Game = () => {
         className="relative w-[8.42rem] h-[0.89rem] shrink-0"
         alt=""
         src="/pagination.svg"
-      /> */}  
+      /> */}
       <NavigationContainer
         dimensionsText="/vector-11.svg"
         dimensionsText2="/path2.svg"

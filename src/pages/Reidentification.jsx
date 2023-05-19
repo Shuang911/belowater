@@ -20,12 +20,15 @@ const ReIdentification = () => {
           <div className="absolute  bottom-[77.19%] left-[calc(50%_-_330.87px)] leading-[6.88rem] font-black inline-block w-[32.63rem] h-[4.81rem]">
             {" "}
             Can I recycle this?
-            
           </div>
-          
+
           <div className="absolute h-[77.93%] top-[20.86%] left-[calc(50%_-_333.04px)] text-[1.06rem] leading-[1.63rem] font-medium font-montserrat text-darkslategray-100 inline-block w-[31.31rem]">
-            Recycling is the best thing we can do from home to keep our fish friends safe from plastic (along with reducing the use of plastics
-            altogether). But figuring out whether something is recyclable can be tricky some times. Upload a picture of what you want to recycle below and our identifier will tell you whether its recyclable or not.
+            Recycling is the best thing we can do from home to keep our fish
+            friends safe from plastic (along with reducing the use of plastics
+            altogether). But figuring out whether something is recyclable can be
+            tricky some times. Upload a picture of what you want to recycle
+            below and our identifier will tell you whether its recyclable or
+            not.
           </div>
         </div>
       </div>

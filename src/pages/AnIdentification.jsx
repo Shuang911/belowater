@@ -24,12 +24,12 @@ const AnIdentification = () => {
           <div className="absolute h-[49.93%] top-[49.86%] left-[calc(50%_-_333.04px)] text-[1.06rem] leading-[1.63rem] font-medium font-montserrat text-darkslategray-100 inline-block w-[31.31rem]">
             Snap or upload a photo of a dolphin with your computer. The model
             will tell you what species it thinks it is from a list of 25. See
-            full description with limitations below
+            full description with limitations below.
           </div>
         </div>
       </div>
-      <div class="relative">
-        <div class="w-1000 h-800">
+      <div class="relative flex">
+        <div>
           <iframe
             src="https://lfer0020-oceanledge-identifier-2.hf.space"
             frameborder="0"
@@ -37,7 +37,7 @@ const AnIdentification = () => {
             height="800"
           ></iframe>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-32 w-650 bg-white"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 w-500 bg-ghostwhite"></div>
       </div>
 
       <ContainerFooter />

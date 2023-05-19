@@ -186,56 +186,6 @@ const Gallery = () => {
         //onFAQsTextClick={onFAQsTextClick}
       />
 
-      <div className="sketchfab-embed-wrapper">
-        <iframe
-          title="Marine Pollution - LowPoly Diorama"
-          frameBorder="0"
-          allowFullScreen
-          mozallowfullscreen="true"
-          webkitallowfullscreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          xr-spatial-tracking
-          execution-while-out-of-viewport
-          execution-while-not-rendered
-          web-share
-          src="https://sketchfab.com/models/8ff1798b02c547aa8924d33705737961/embed"
-        ></iframe>
-        <p
-          style={{
-            fontSize: "13px",
-            fontWeight: "normal",
-            margin: "5px",
-            color: "#4A4A4A",
-          }}
-        >
-          <a
-            href="https://sketchfab.com/3d-models/marine-pollution-lowpoly-diorama-8ff1798b02c547aa8924d33705737961?utm_medium=embed&utm_campaign=share-popup&utm_content=8ff1798b02c547aa8924d33705737961"
-            target="_blank"
-            rel="nofollow"
-            style={{ fontWeight: "bold", color: "#1CAAD9" }}
-          >
-            Marine Pollution - LowPoly Diorama
-          </a>{" "}
-          by{" "}
-          <a
-            href="https://sketchfab.com/alstrainfinite?utm_medium=embed&utm_campaign=share-popup&utm_content=8ff1798b02c547aa8924d33705737961"
-            target="_blank"
-            rel="nofollow"
-            style={{ fontWeight: "bold", color: "#1CAAD9" }}
-          >
-            Alstra Infinite
-          </a>{" "}
-          on{" "}
-          <a
-            href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8ff1798b02c547aa8924d33705737961"
-            target="_blank"
-            rel="nofollow"
-            style={{ fontWeight: "bold", color: "#1CAAD9" }}
-          >
-            Sketchfab
-          </a>
-        </p>
-      </div>
     </div>
   );
 };
