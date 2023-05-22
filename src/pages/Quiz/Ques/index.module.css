@@ -22,7 +22,8 @@ app {
   height: 80vh;
   width: 70rem;
   
-  background: url("./images/page1.png") no-repeat center / cover;
+  /* background: url("./images/page1.png") no-repeat center / cover; */
+  background: url("./images/page2.jpeg") no-repeat center / cover;
 }
 
 .startPage3 {
@@ -482,7 +483,7 @@ app {
   align-items: flex-end;
   height: 80vh;
   width: 70rem;
-  background: url("./images1/end1.jpeg") no-repeat center / cover;
+  background: url("./images1/end1.png") no-repeat center / cover;
 }
 
 .end1Text {

@@ -31,27 +31,27 @@ export default function Quiz1() {
           image: img1,
           isCorrect: false,
           option: "A",
-          feedback: "Thats not quite right," + "\n" + "Try another answer",
+          feedback: "Thats not quite right," + "\n" + "Try another answer.",
         },
         {
           id: 1,
           image: img2,
           isCorrect: false,
           option: "B",
-          feedback: "Thats not quite right,Try another answer",
+          feedback: "Thats not quite right,Try another answer.",
         },
         {
           id: 2,
           image: img3,
           isCorrect: true,
           option: "C",
-          feedback: "Correct! Nice to meet you!",
+          feedback: "Correct ! Nice to meet you !",
         },
       ],
-      answer: { id: 0, image: img3, text: "Correct! Nice to meet you!" },
+      answer: { id: 0, image: img3, text: "Correct!  Nice to meet you!" },
     },
     {
-      questionText: "Where do I look for food?",
+      questionText: "Where do I look for food ?",
 
       answerOptions: [
         {
@@ -59,32 +59,32 @@ export default function Quiz1() {
           image: img4,
           isCorrect: false,
           option: "A",
-          feedback: "Thats not quite right, have another go!",
+          feedback: "Thats not quite right, have another go !",
         },
         {
           id: 1,
           image: img5,
           isCorrect: true,
           option: "B",
-          feedback: "Correct! Estuaries are where the river meets the ocean!",
+          feedback: "Correct ! Estuaries are where the river meets the ocean !",
         },
         {
           id: 2,
           image: img6,
           isCorrect: false,
           option: "C",
-          feedback: "Thats not quite right, have another go!",
+          feedback: "Thats not quite right, have another go !",
         },
       ],
       answer: {
         id: 0,
         image: img5,
-        text: "Correct! Estuaries are where the river meets the ocean!",
+        text: "Correct ! Estuaries are where the river meets the ocean !",
       },
     },
     {
       questionText:
-        "Unfortunately we snubfin dolphins are vulnerable to extinction because there are so few of us. What do you think is our biggest threat?",
+        "Unfortunately we snubfin dolphins are vulnerable to extinction because there are so few of us. What do you think is our biggest threat ?",
 
       answerOptions: [
         {
@@ -92,7 +92,7 @@ export default function Quiz1() {
           image: img7,
           isCorrect: false,
           option: "A",
-          feedback: "Unfortunately,that's not quite right, please try again",
+          feedback: "Unfortunately, that's not quite right, please try again.",
         },
         {
           id: 1,
@@ -100,24 +100,24 @@ export default function Quiz1() {
           isCorrect: true,
           option: "B",
           feedback:
-            "Correct! Gillnets are used to catch other fish for humans to eat. But we snubfins can get caught in them too and drown because we are mammals and need to breathe air like you",
+            "Correct ! Gillnets are used to catch other fish for humans to eat. But we snubfins can get caught in them too and drown because we are mammals and need to breathe air like you.",
         },
         {
           id: 2,
           image: img9,
           isCorrect: false,
           option: "C",
-          feedback: "Unfortunately,that's not quite right, please try again",
+          feedback: "Unfortunately, that's not quite right, please try again.",
         },
       ],
       answer: {
         id: 0,
         image: img8,
-        text: "Correct! Gillnets are used to catch other fish for humans to eat. But we snubfins can get caught in them too and drown because we are mammals and need to breathe air like youtely that's not quite right, please try again",
+        text: "Correct ! Gillnets are used to catch other fish for humans to eat. But we snubfins can get caught in them too and drown because we are mammals and need to breathe air like youtely that's not quite right, please try again.",
       },
     },
     {
-      questionText: "Which part of australian oceans can you find me ",
+      questionText: "Which part of australian oceans can you find me ?",
 
       answerOptions: [
         {
@@ -126,27 +126,27 @@ export default function Quiz1() {
           isCorrect: true,
           option: "A",
           feedback:
-            "Correct! I like to swim in the warm tropical waters of Northern Australia from  Queensland, and the northern territory to Western Australia",
+            "Correct ! I like to swim in the warm tropical waters of Northern Australia from  Queensland, and the northern territory to Western Australia.",
         },
         {
           id: 1,
           image: img11,
           isCorrect: false,
           option: "B",
-          feedback: "That's not right, try again",
+          feedback: "That's not right, try again.",
         },
         {
           id: 2,
           image: img12,
           isCorrect: false,
           option: "C",
-          feedback: "That's not right, try again",
+          feedback: "That's not right, try again.",
         },
       ],
       answer: {
         id: 0,
         image: img10,
-        text: "Correct! I like to swim in the warm tropical waters of Northern Australia from  Queensland, and the northern territory to Western Australia",
+        text: "Correct ! I like to swim in the warm tropical waters of Northern Australia from  Queensland, and the northern territory to Western Australia.",
       },
     },
   ];

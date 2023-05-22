@@ -5,12 +5,14 @@ import Header from "../../../../components/Header";
 import NavigationContainer from "../../../../components/NavigationContainer";
 import CertificatePage from "../CertificatePage";
 import succes from "./success_icon_194168.png";
-import Modle1 from "../../Mod/Modle1"
+import Modle1 from "../../Mod/Modle1";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 const rows = 3;
 const columns = 3;
 
-// const imgOrder = ["1", "3", "2", "4", "5", "6", "7", "8", "9"];
+//const imgOrder = ["1", "3", "2", "4", "5", "6", "7", "8", "9"];
 const imgOrder = ["1", "3", "2", "7", "9", "5", "4", "6", "8"];
 
 const Puzzle = () => {
@@ -23,6 +25,10 @@ const Puzzle = () => {
     window.location.href = "/Quiz"; 
   }
 
+  const navigate = useNavigate();
+  const onClick = useCallback(() => {
+    navigate("/identification");
+  }, [navigate]);
   
 
   const dragStart = (e) => {
@@ -110,7 +116,7 @@ const Puzzle = () => {
       (
         <div>
           <p className={style.turns}>
-          Who is trapped by the fishing net, complete the puzzle and help him ...</p>
+          Who is trapped by the fishing net, try this puzzle !</p>
           {/* <p className={style.turns2}>Turns:{turns}</p> */}
           <div className={style.board}>
               {
@@ -146,13 +152,23 @@ const Puzzle = () => {
         (
           <>
             <p className={style.turns}>
-             Thank you for helping me! Here is the 3D model to know me more!</p>
+             Thank you for helping me out ! Try this 3D model</p>
             
             {/* <div className={style.certP}> */}
               {/* <CertificatePage /> */}
             <Modle1 />
-            <button className={styles.hookbutton1} onClick={handleClick}>Back</button>
+            <button className={styles.hookbutton1} onClick={onClick}>Go Identification</button>
             {/* </div> */}
+            
+            <div >
+        <p>Reference:</p>
+        <p>
+          {"  "}
+          <a href="https://skfb.ly/ooo9L">
+          https://skfb.ly/ooo9L
+          </a>
+        </p>
+        </div>
           </>
         )
       

@@ -93,7 +93,7 @@ const Home = () => {
                 </a>
                 <p className="m-0 text-[1rem] text-snow">
                   Learn more about our fishy friends & test your knowledge by
-                  quizzing yourself!
+                  quizzing yourself !
                 </p>
               </span>
             </div>
@@ -113,7 +113,7 @@ const Home = () => {
                     Friend Identifier
                   </p>
                 </a>
-                <p className="m-0 text-[1rem] text-snow">{`Did you see a fishy friend when you went whale or dolphin watching but don't sure about who they are? We have a neat little tool to help you identify them if you take a pic! `}</p>
+                <p className="m-0 text-[1rem] text-snow">{`Did you see a fishy friend when you went whale or dolphin watching but don't sure about who they are? We have a neat little tool to help you identify them if you take a pic ! `}</p>
               </span>
             </div>
           </div>
@@ -132,7 +132,7 @@ const Home = () => {
                 </a>
                 <p className="m-0 text-[1rem] text-snow">
                   Learn more about our fishy friends (which will help with the
-                  quizzes) & how to protect them!
+                  quizzes) & how to protect them !
                 </p>
               </span>
             </div>
@@ -147,7 +147,7 @@ const Home = () => {
               </a>
               <p className="m-0 text-[1rem] text-snow">
                 Help our fishy friends by removing plastics in the ocean in a
-                fun little game!
+                fun little game !
               </p>
             </span>
           </div>

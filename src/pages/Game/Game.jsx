@@ -9,6 +9,10 @@ const Game = () => {
   // const onFAQsTextClick = useCallback(() => {
   //   navigate("/fishing");
   // }, [navigate]);
+  const navigate = useNavigate();
+  const onClick1 = useCallback(() => {
+    navigate("/gallery");
+  }, [navigate]);
 
   return (
     <div className="relative bg-ghostwhite w-full overflow-hidden flex flex-col py-[4.13rem] px-[0.69rem] box-border items-center justify-start gap-[3.13rem] text-left text-[1.75rem] text-indigo_900 font-catamaran">
@@ -20,6 +24,12 @@ const Game = () => {
             Ocean Helper
           </div>
           <div className="absolute h-[76.88%] w-[80.65%] top-[0%] left-[10.05%] text-[1.06rem] leading-[1.63rem] font-medium font-montserrat text-black inline-block">{`Our amazing and beautiful Ocean friends have a lot of problems that trouble them. One of the biggest problems they have are the plastics that we throw away that end up in the ocean! Being caught up in plastics or eating microplastics that our fishy friends mistake for food are one of the biggest reasons why some of our ocean friends are even endangered! `}</div>
+          <button
+        className="bottom-0 left-1/4 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-8 py-5 absolute z-50"
+        onClick={onClick1}
+      >
+        View Gallery
+      </button>
         </div>
         <img
           className="absolute top-[0rem] left-[27.26rem] w-[44.61rem] h-[33.18rem] object-cover"

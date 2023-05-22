@@ -7,8 +7,9 @@ import { getPlastics } from "../../../services/api";
 import style from "./index.module.css";
 import CatchResultDialog from "./dialogs/CatchResult";
 
-var height = 580; //地面以下
-var width = 610; //左右范围
+
+var height = 580; 
+var width = 610; 
 var horizontalPlaneTop = 220;
 var animalSize = {
   width: 200,
@@ -24,6 +25,7 @@ var plasticMaxNum = 2;
 const randomNum = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
 
 const isCollision = (a, b) => {
   return (
@@ -313,11 +315,17 @@ const Fishing = () => {
         <p> {remainingChances} chances left</p > */}
         <button className={style.hookbutton} onClick={handleHook} disabled={gameOver}>
         {buttonText}
+        
         <p>{remainingChances} chances left</p >
       </button>
       
       {/* {gameOverText} */}
-        
+        {gameOver && <a href="/quiz"
+        // className="top-0 left-1/6 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 rounded-md px-8 py-5 absolute z-50"
+        className={style.hookbutton3}
+      >
+        Go Friend Quiz
+      </a>}
         <div
           className={style.rope}
           style={{

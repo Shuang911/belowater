@@ -119,3 +119,10 @@
     text-align: left;
     /* margin-right: 20rem; */
 }
+
+.texth2{
+    color: #08087d;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

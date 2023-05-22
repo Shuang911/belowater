@@ -6,6 +6,8 @@ const PlayContainer = () => {
         Ocean Friend Quiz
       </b> */}
       <div className="absolute top-[5.63rem] left-[calc(50%_-_477px)] w-[59.81rem] h-[22.53rem] text-[1.06rem] text-darkslategray-100 font-montserrat">
+        
+      <a href="/quiz3">
         <div className="absolute top-[0rem] left-[calc(50%_-_152.3px)] w-[18.24rem] h-[21.11rem] text-[1.56rem] text-midnightblue-100 font-catamaran">
           <div className="absolute top-[3.55rem] left-[calc(50%_-_147.95px)] rounded-11xl bg-white box-border w-[18.49rem] h-[17.69rem] border-[4px] border-solid border-darkorchid" />
           <img
@@ -17,7 +19,9 @@ const PlayContainer = () => {
             <b className="absolute top-[calc(50%_-_87.61px)] left-[calc(50%_-_31.65px)] leading-[2.38rem]">{`Part 2 `}</b>
           </div>
         </div>
+        </a>
 
+        <a href="/quiz2">
         <div className="absolute top-[0rem] left-[calc(50%_-_478.5px)] w-[18.24rem] h-[21.11rem] mix-blend-normal">
           <div className="absolute top-[3.55rem] left-[calc(50%_-_147.95px)] rounded-11xl bg-white box-border w-[18.49rem] h-[17.69rem] border-[4px] border-solid border-goldenrod" />
           <img
@@ -36,6 +40,7 @@ const PlayContainer = () => {
             <b className="absolute top-[0.1rem] left-[3.81rem] text-[1.56rem] leading-[2.38rem] inline-block font-catamaran text-black w-[8rem] h-[2.5rem]">{`Part 1 `}</b>
           </div>
         </div>
+        </a>
 
         <a href="/quiz3" className="text-purple hover:bg-red-600">
           <div className="absolute h-[26.62%] top-[58.25%] left-[calc(50%_-_132.5px)] leading-[1.63rem] inline-block w-[16.63rem]">
@@ -48,6 +53,7 @@ const PlayContainer = () => {
           alt=""
           src="/jellyfish.svg"
         />
+        <a href="/puzzle">
         <div className="absolute top-[0.02rem] left-[calc(50%_+_186.59px)] w-[18.24rem] h-[21.11rem] text-[1.56rem] text-black font-catamaran">
           <div className="absolute top-[0rem] left-[calc(50%_-_145.95px)] w-[18.24rem] h-[21.11rem]">
             <div className="absolute top-[3.55rem] left-[calc(50%_-_147.95px)] rounded-11xl bg-white box-border w-[18.49rem] h-[17.69rem] border-[4px] border-solid border-goldenrod" />
@@ -56,17 +62,12 @@ const PlayContainer = () => {
               alt=""
               src="/icon2.svg"
             />
-            {/* <div className="absolute top-[8.36rem] left-[calc(50%_-_130.23px)] w-[16.34rem] h-[11.24rem] overflow-hidden">
-              <b className="absolute top-[0.1rem] left-[3.81rem] leading-[2.38rem] hidden w-[8.56rem] h-[4rem]">{`Quiz 3 `}</b>
-              <b className="absolute top-[6.22rem] left-[4rem] leading-[2.38rem] hidden w-[9rem] h-[2.88rem]">
-                Who am I?
-              </b>
-            </div> */}
             <div className="absolute top-[7.98rem] left-[calc(50%_-_118.07px)] w-[15.11rem] h-[12.62rem] overflow-hidden text-midnightblue-100">
               <b className="absolute top-[calc(50%_-_87.61px)] left-[calc(50%_-_31.65px)] leading-[2.38rem]">{`Part 3 `}</b>
             </div>
           </div>
         </div>
+        </a>
         <a href="/puzzle" className="text-purple hover:bg-red-600">
           <div className="absolute h-[26.62%] top-[58.25%] left-[calc(50%_+_206.5px)] leading-[1.63rem] inline-block w-[16.63rem]">
             Marine Puzzle

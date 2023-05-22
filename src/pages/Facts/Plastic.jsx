@@ -8,7 +8,7 @@ import styles from "../Quiz/Ques/Certificate.module.css";
 const Plastic = () => {
 
 function handleClick() {
-  window.location.href = "/Gallery";
+  window.location.href = "/recycle";
 }
 
   
@@ -168,12 +168,15 @@ function handleClick() {
                 • Tidy up after yourself – don’t just throw it away, put
                 unwanted plastics in the bin.
               </p>
+
               <button className={styles.hookbutton1} onClick={handleClick}>
-                Back to Gallery
+                Recycling Identifier
               </button>
             </div>
           </div>
+          
         </div>
+
       </div>
     );
   };

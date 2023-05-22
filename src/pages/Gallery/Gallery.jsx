@@ -4,6 +4,7 @@ import Style from "./Gallery.module.css";
 import NavigationContainer from "../../components/NavigationContainer";
 import Header from "../../components/Header";
 import Slider from "../Slider/Slider";
+import img1 from "../Gallery/Resource1/img-01.png"
 
 const Gallery = () => {
   const [file, setFile] = useState(null);
@@ -22,7 +23,9 @@ const Gallery = () => {
       <br></br>
       <div className={Style.container1}>
         <br></br>
-        <h2>Click each to see how marine debris impact our life...</h2>
+        <div className={Style.texth2}>
+        <p>Click each picture to know more ...</p>
+        </div>
         <div className={Style.mediaContainer1}>
           {Resource1.map((file, index) => (
             <div
@@ -57,113 +60,119 @@ const Gallery = () => {
           )}
         </div>
       </div>
-      <br></br>
+      <br></br> 
+      
       <button className={Style.button1} onClick={buttonClick}>
         Click to know why it happens ...
       </button>
+      
 
       {clicked1 && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <a
-            href="/overfish"
-            className=" top-[84.44rem] left-[9.56rem] rounded-11xl bg-darkorchid-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-darkorchid-100"
+        
+          <div
             style={{
-              flex: 1,
-              margin: "0 3rem",
-              backgroundColor: "rgb(104,41,179,1)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
-            <img
-              className="relative w-[2.76rem] h-[4.72rem]"
-              alt=""
-              src="/icon--hook.svg"
-            />
-            <div className="relative leading-[1.63rem]">Over-fishing</div>
-          </a>
-          <a
-            href="/mining"
-            className=" top-[84.44rem] left-[25.19rem] rounded-11xl bg-goldenrod-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-goldenrod-100"
-            style={{
-              flex: 1,
-              margin: "0 3rem",
-              backgroundColor: "rgb(255,179,71,1)",
-            }}
-          >
-            <img
-              className="relative w-[2.76rem] h-[4.72rem]"
-              alt=""
-              src="/icon--mining.svg"
-            />
-            <div className="relative leading-[1.63rem]">Mining</div>
-          </a>
-          <a
-            href="/plastic"
-            className=" top-[84.44rem] left-[40.81rem] rounded-11xl bg-darkorchid-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-darkorchid-100"
-            style={{
-              flex: 1,
-              margin: "0 3rem",
-              backgroundColor: "rgb(0,0,255,0.7)",
-            }}
-          >
-            <img
-              className="relative w-[2.76rem] h-[4.72rem]"
-              alt=""
-              src="/icon--plastic-polution.svg"
-            />
-            <div className="relative leading-[1.63rem]">
-              <p className="m-0">{`Plastic `}</p>
-              <p className="m-0">Pollution</p>
-            </div>
-          </a>
-          <a
-            href="/climate"
-            className=" top-[84.44rem] left-[56.44rem] rounded-11xl bg-goldenrod-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-goldenrod-100"
-            style={{
-              flex: 1,
-              margin: "0 3rem",
-              backgroundColor: "rgb(246, 52, 87,0.7)",
-            }}
-          >
-            <img
-              className="relative w-[2.76rem] h-[4.72rem]"
-              alt=""
-              src="/icon--climate-change.svg"
-            />
-            <b className="relative leading-[1.63rem]">
-              <p className="m-0">Climate</p>
-              <p className="m-0">Change</p>
-            </b>
-          </a>
+            <a
+              href="/overfish"
+              className=" top-[84.44rem] left-[9.56rem] rounded-11xl bg-darkorchid-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-darkorchid-100"
+              style={{
+                flex: 1,
+                margin: "0 3rem",
+                backgroundColor: "rgb(104,41,179,1)",
+              }}
+            >
+              <img
+                className="relative w-[2.76rem] h-[4.72rem]"
+                alt=""
+                src="/icon--hook.svg"
+              />
+              <div className="relative leading-[1.63rem]">Over-fishing</div>
+            </a>
+            <a
+              href="/mining"
+              className=" top-[84.44rem] left-[25.19rem] rounded-11xl bg-goldenrod-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-goldenrod-100"
+              style={{
+                flex: 1,
+                margin: "0 3rem",
+                backgroundColor: "rgb(255,179,71,1)",
+              }}
+            >
+              <img
+                className="relative w-[2.76rem] h-[4.72rem]"
+                alt=""
+                src="/icon--mining.svg"
+              />
+              <div className="relative leading-[1.63rem]">Mining</div>
+            </a>
+            <a
+              href="/plastic"
+              className=" top-[84.44rem] left-[40.81rem] rounded-11xl bg-darkorchid-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-darkorchid-100"
+              style={{
+                flex: 1,
+                margin: "0 3rem",
+                backgroundColor: "rgb(0,0,255,0.7)",
+              }}
+            >
+              <img
+                className="relative w-[2.76rem] h-[4.72rem]"
+                alt=""
+                src="/icon--plastic-polution.svg"
+              />
+              <div className="relative leading-[1.63rem]">
+                <p className="m-0">{`Plastic `}</p>
+                <p className="m-0">Pollution</p>
+              </div>
+            </a>
+            <a
+              href="/climate"
+              className=" top-[84.44rem] left-[56.44rem] rounded-11xl bg-goldenrod-200 box-border w-[12.06rem] h-[7.88rem] flex flex-row py-[0.63rem] px-[1.25rem] items-center justify-center gap-[0.63rem] text-center text-[1.06rem] text-white font-montserrat border-[4px] border-solid border-goldenrod-100"
+              style={{
+                flex: 1,
+                margin: "0 3rem",
+                backgroundColor: "rgb(246, 52, 87,0.7)",
+              }}
+            >
+              <img
+                className="relative w-[2.76rem] h-[4.72rem]"
+                alt=""
+                src="/icon--climate-change.svg"
+              />
+              <b className="relative leading-[1.63rem]">
+                <p className="m-0">Climate</p>
+                <p className="m-0">Change</p>
+              </b>
+            </a>
 
           
-        </div>
-      )}
+          </div>
+          
+      )
+      }
 
       <br></br>
       <div className={Style.refe}>
         <p>Reference:</p>
         <p>
-          1.{" "}
+          {/* 1.{" "}
           <a href="https://unsplash.com/s/photos/marine-pollution">
             https://unsplash.com/s/photos/marine-pollution
           </a>
         </p>
+        
         <p>
           2.{" "}
-          <a href="https://www.pbslearningmedia.org/resource/noaa-interactive-30/what-is-marine-debris-ocean-today/">
-            https://www.pbslearningmedia.org/resource/noaa-interactive-30/what-is-marine-debris-ocean-today
+          <a href="https://pixabay.com/images/search/marine%20pollution/">
+            https://pixabay.com/images/search/marine%20pollution
           </a>
         </p>
         <p>
-          3.{" "}
-          <a href="https://pixabay.com/images/search/marine%20pollution/">
-            https://pixabay.com/images/search/marine%20pollution
+          3.{" "} */}
+          <a href="https://www.pbslearningmedia.org/resource/noaa-interactive-30/what-is-marine-debris-ocean-today/">
+            https://www.pbslearningmedia.org/resource/noaa-interactive-30/what-is-marine-debris-ocean-today
           </a>
         </p>
       </div>

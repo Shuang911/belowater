@@ -33,14 +33,14 @@ export default function Quiz1() {
           image: img1,
           isCorrect: false,
           option: "A",
-          feedback: "incorrect, it cannot be thrown into the ocean",
+          feedback: "incorrect, it cannot be thrown into the ocean.",
         },
         {
           id: 1,
           image: img2,
           isCorrect: false,
           option: "B",
-          feedback: "incorrect, it cannot be thrown into the ocean",
+          feedback: "incorrect, it cannot be thrown into the ocean.",
         },
         {
           id: 2,
@@ -48,13 +48,13 @@ export default function Quiz1() {
           isCorrect: true,
           option: "C",
           feedback:
-            "Actually, we should not throw any trash into the ocean",
+            "Actually, we should not throw any trash into the ocean.",
         },
       ],
       answer: {
         id: 0,
         image: img3,
-        text: "Actually, we should not throw any trash into the ocean",
+        text: "Actually, we should not throw any trash into the ocean.",
       },
     },
 
@@ -66,14 +66,14 @@ export default function Quiz1() {
           image: img4,
           isCorrect: false,
           option: "A",
-          feedback: "Incorrect",
+          feedback: "Incorrect, try again.",
         },
         {
           id: 1,
           image: img5,
           isCorrect: false,
           option: "B",
-          feedback: "Incorrect",
+          feedback: "Incorrect, try again.",
         },
         {
           id: 2,
@@ -81,13 +81,13 @@ export default function Quiz1() {
           isCorrect: true,
           option: "C",
           feedback:
-            "Extremely small plastic fragments",
+            "microplastics are extremely small plastic fragments.",
         },
       ],
       answer: {
         id: 0,
         image: img6,
-        text: "Extremely small plastic fragments",
+        text: "microplastics are extremely small plastic fragments.",
       },
     },
 
@@ -106,14 +106,14 @@ export default function Quiz1() {
           image: img8,
           isCorrect: false,
           option: "B",
-          feedback: "Incorrect, not this one",
+          feedback: "Incorrect, try again.",
         },
         {
           id: 2,
           image: img9,
           isCorrect: false,
           option: "C",
-          feedback: "Incorrect, not this one",
+          feedback: "Incorrect,  try again.",
         },
       ],
       answer: {
@@ -133,20 +133,20 @@ export default function Quiz1() {
           isCorrect: true,
           option: "A",
           feedback:
-            "  Help to collect trash from the beach and do not litter on beach",
+            "  We can help to collect trash from the beach and do not litter on beach.",
         },
         {
           id: 1,
           image: img11,
           isCorrect: false,
           option: "B",
-          feedback: "Incorrect, throwing trash into ocean will harm the ocean ",
+          feedback: "No, throwing trash into ocean will harm the ocean.",
         },
       ],
       answer: {
         id: 0,
         image: img10,
-        text: " Do not litter and collect trash from the beach",
+        text: " We can help to collect trash from the beach and do not litter on beach.",
       },
     },
   ];
